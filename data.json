@@ -1,0 +1,13 @@
+{
+  "employee": [
+    {
+      "id": "ar",
+      "name": "Ashiq",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true,
+      "password": "123",
+      "email": "artanjil@hotmail.com"
+    }
+  ]
+}

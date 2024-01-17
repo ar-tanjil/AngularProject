@@ -1,0 +1,27 @@
+<div class=" m-2 d-flex align-items-center justify-content-center h-100" >
+<div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Log in</h1>
+      <form
+        class="example-form"
+        [formGroup]="loginForm"
+        (ngSubmit)="proceedLogin()"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="Enter User Name" formControlName="id" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password" />
+        </mat-form-field>  
+        <div>
+          <button mat-raised-button class="m-2" color="primary">
+           Log In
+          </button>
+          <a routerLink="/" class="m-2" mat-raised-button color="accent">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+
+<div class="card m-2 mt-5 d-flex align-items-center justify-content-center h-75">
+  <div class="card-body">
+    <h1 class="card-title" *ngIf="!editing">Register Form</h1>
+    <h1 class="card-title" *ngIf="editing"
+      >Edit {{ employee.name | titlecase }} Details
+    </h1>
+    <form
+      class="example-form"
+      [formGroup]="registerform"
+      (ngSubmit)="submitForm()"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="Enter User Name" formControlName="id" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" formControlName="password" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required />
+      </mat-form-field>
+      <div>
+        <mat-radio-group formControlName="gender" aria-label="Select an option">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div>
+        <button mat-raised-button class="mx-5" color="primary">
+          Submit
+        </button>
+        <a routerLink="/login" mat-raised-button color="accent">Back to Login</a>
+      </div>
+    </form>
+  </div>
+</div>
