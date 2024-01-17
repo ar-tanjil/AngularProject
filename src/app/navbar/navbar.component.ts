@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
+import { Model } from '../service/repository.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+isAdmin: boolean;
+      constructor(private route: Router, private model: Model){
+          this.isAdmin = model.isAdmin();
+      }
+
+      
+
+     
+
+      logOut(){
+        sessionStorage.clear();
+        this.route.navigateByUrl("/login");
+      }
 }

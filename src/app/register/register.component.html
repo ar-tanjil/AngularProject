@@ -36,7 +36,8 @@
         <button mat-raised-button class="mx-5" color="primary">
           Submit
         </button>
-        <a routerLink="/login" mat-raised-button color="accent">Back to Login</a>
+        <a routerLink="/login" *ngIf="!isLoggedIn" mat-raised-button color="accent">Back to Login</a>
+        <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button color="accent">Back to Home</a>
       </div>
     </form>
   </div>

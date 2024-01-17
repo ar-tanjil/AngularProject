@@ -13,9 +13,11 @@ export class RegisterComponent {
 
   employee: Employee = new Employee();
   editing: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(public model: Model, activeRoute: ActivatedRoute, 
     public router: Router, private builder: FormBuilder) {
+      this.isLoggedIn = this.model.isloggedin();
 
 activeRoute.params.subscribe(params => {
     this.editing = params["mode"] == "edit";

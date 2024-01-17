@@ -15,7 +15,7 @@ export class Model {
         this.dataSource.getData().subscribe(data => {
             this.employee = data;
             this.replaySubject.next(data);
-            this.replaySubject.complete();     
+            this.replaySubject.complete();
         })
     }
 
@@ -63,5 +63,17 @@ export class Model {
         })
     }
 
+
+    isloggedin() {
+        return sessionStorage.getItem('username') != null;
+    }
+
+    getrole() {
+        return sessionStorage.getItem('role') != null ? sessionStorage.getItem('role')?.toString() : '';
+    }
+
+    isAdmin(): boolean{
+        return this.getrole() === "admin";
+    }
 
 }

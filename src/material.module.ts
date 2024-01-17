@@ -11,6 +11,7 @@ import {MatSelectModule} from "@angular/material/select"
 import {MatCheckboxModule} from "@angular/material/checkbox"
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
     exports: [
@@ -25,7 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
         MatSelectModule,
         MatCheckboxModule,
         MatFormFieldModule,
-        MatIconModule
+        MatIconModule,
+        MatMenuModule
     ]
 })
 export class MaterialModule { }

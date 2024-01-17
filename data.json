@@ -3,6 +3,7 @@
     {
       "id": "ar",
       "name": "Ashiq",
+      "designation": "manager",
       "gender": "male",
       "role": "admin",
       "isactive": true,
