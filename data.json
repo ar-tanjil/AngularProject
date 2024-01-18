@@ -3,12 +3,40 @@
     {
       "id": "ar",
       "name": "Ashiq",
+      "department": "administration",
       "designation": "manager",
       "gender": "male",
       "role": "admin",
       "isactive": true,
       "password": "123",
       "email": "artanjil@hotmail.com"
+    },
+    {
+      "id": "tr",
+      "name": "tanjil",
+      "department": "administration",
+      "designation": "staff",
+      "gender": "male",
+      "role": "tech",
+      "isactive": true,
+      "password": "123",
+      "email": "artanjil@hotmail.com"
+    }
+  ],
+  "role": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "tech",
+      "name": "Technician"
+    }
+  ],
+  "department": [
+    {
+      "code": "administration",
+      "name": "Administration"
     }
   ]
 }

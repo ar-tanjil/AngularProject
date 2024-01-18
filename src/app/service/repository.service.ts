@@ -2,12 +2,16 @@ import { Injectable } from "@angular/core";
 import { Observable, ReplaySubject } from "rxjs";
 import { Employee } from "../model/employee.model";
 import { DataSource } from "./db.service";
+import { Role } from "../model/role.model";
+import { Department } from "../model/department.model";
 
 @Injectable()
 export class Model {
     private employee: Employee[];
     private locator = (p: Employee, id?: string) => p.id == id;
     private replaySubject: ReplaySubject<Employee[]>;
+    private rolelist: any;
+    private departmentList: any;
 
     constructor(private dataSource: DataSource) {
         this.employee = new Array<Employee>();
@@ -16,6 +20,14 @@ export class Model {
             this.employee = data;
             this.replaySubject.next(data);
             this.replaySubject.complete();
+        })
+
+        this.dataSource.getDepartment().subscribe(department => {
+            this.departmentList = department;
+        })
+
+        this.dataSource.getuserrole().subscribe(roles => {
+            this.rolelist = roles;
         })
     }
 
@@ -31,25 +43,26 @@ export class Model {
 
     getEmployeeObservable(id: string): Observable<Employee | undefined> {
         let subject = new ReplaySubject<Employee | undefined>(1);
-        this.replaySubject.subscribe(products => {
-            subject.next(products.find(p => this.locator(p, id)));
+        this.replaySubject.subscribe(emp => {
+            subject.next(emp.find(p => this.locator(p, id)));
             subject.complete();
         });
         return subject;
     }
 
-    saveEmployee(employee: Employee) {
-        this.dataSource.saveData(employee)
-            .subscribe(p => this.employee.push(p));
-    }
 
-    updateEmployee(employee: Employee) {
-        this.dataSource.updateData(employee).subscribe(p => {
-            let index = this.employee.findIndex(emp => {
-                this.locator(emp, p.id);
+    saveEmployee(employee: Employee) {
+        if (!this.locator(employee, employee.id)) {
+            this.dataSource.saveData(employee)
+                .subscribe(p => this.employee.push(p));
+        } else {
+            this.dataSource.updateData(employee).subscribe(p => {
+                let index = this.employee
+                    .findIndex(item => this.locator(item, p.id));
                 this.employee.splice(index, 1, p);
-            })
-        })
+                return this.getEmployeeObservable(employee.id ?? "");
+            });
+        }
     }
 
 
@@ -72,8 +85,16 @@ export class Model {
         return sessionStorage.getItem('role') != null ? sessionStorage.getItem('role')?.toString() : '';
     }
 
-    isAdmin(): boolean{
+    isAdmin(): boolean {
         return this.getrole() === "admin";
+    }
+
+    getRoleList(): Role[] {
+        return this.rolelist;
+    }
+
+    getDepartmentList(): Department[] {
+        return this.departmentList;
     }
 
 }

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
+import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MaterialModule } from 'src/material.module';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    UpdatepopupComponent,
   ],
   imports: [
     BrowserModule,

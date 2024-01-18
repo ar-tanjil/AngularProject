@@ -37,6 +37,8 @@ registerform = this.builder.group({
   password: this.builder.control('', Validators.required),
   email: this.builder.control('', Validators.email),
   gender: this.builder.control('male'),
+  designation: this.builder.control(""),
+  department: this.builder.control(""),
   role: this.builder.control(''),
   isactive: this.builder.control(false)
 });

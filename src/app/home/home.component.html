@@ -1,32 +1,45 @@
 <div class="p-1">
-<table class="table table-hover mat-elevation-z8 mt-5 w-100">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Designation</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Role</th>
-      <th scope="col">Active</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let emp of getEmployee(); let i = index">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ emp.name | titlecase}}</td>
-      <td>{{ emp.designation | titlecase}}</td>
-      <td>{{ emp.gender | titlecase }}</td>
-      <td>{{ emp.role | titlecase }}</td>
-      <td>
-        <mat-icon *ngIf="emp.isactive" class="text-primary">check_circle_outline</mat-icon>
-        <mat-icon *ngIf="!emp.isactive" class="text-danger text-center">highlight_off</mat-icon>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-</mat-paginator>
+  <table class="table table-hover mat-elevation-z8 mt-5 w-100">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Role</th>
+        <th scope="col">Active</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of getEmployee(); let i = index" class="text-center">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ emp.name | titlecase }}</td>
+        <td>{{ emp.department | titlecase }}</td>
+        <td>{{ emp.designation | titlecase }}</td>
+        <td>{{ emp.gender | titlecase }}</td>
+        <td>{{ emp.role | titlecase }}</td>
+        <td>
+          <mat-icon *ngIf="emp.isactive" class="text-primary"
+            >check_circle_outline</mat-icon
+          >
+          <mat-icon *ngIf="!emp.isactive" class="text-danger text-center"
+            >highlight_off</mat-icon
+          >
+        </td>
+        <td>
+          <button class="btn btn-sm  btn-info mx-2" (click)="updateuser(emp.id)">Update</button>
+          <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/form', 'edit', emp.id]">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-paginator
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>
