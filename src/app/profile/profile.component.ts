@@ -19,6 +19,9 @@ export class ProfileComponent {
 
     activeRoute.params.subscribe(params => {
       let id = params["id"];
+      if(id == null){
+        id = sessionStorage.getItem("username");
+      }
       if (id != null) {
         model.getEmployeeObservable(id).subscribe(p => {
           Object.assign(this.employee, p || new Employee());

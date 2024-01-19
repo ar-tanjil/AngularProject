@@ -10,5 +10,6 @@ export class Employee {
         public password?: string,
         public salary?: number,
         public joinDate?: Date,
+        public email?: string
     ) { }
 }

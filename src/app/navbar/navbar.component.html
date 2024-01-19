@@ -2,7 +2,7 @@
   <mat-card-content style="margin: 0; padding: 8px">
     <mat-card>
       <mat-card-content
-        style="padding: 0; background-color: rgb(198, 253, 253)"
+        style="padding: 0; background-color:#eaf1c4"
       >
         <div style="display: flex; flex-direction: row; gap: 15px">
           <div>
@@ -10,8 +10,10 @@
               >vertical_split</mat-icon
             >
           </div>
-
           <div style="width: 90%"></div>
+          <div style="display: flex; align-items: center;">
+            <h4 style="margin: 0; font-weight: bold;"> {{date | date : 'EE, MMMM d-yyyy'}} </h4>
+          </div>
 
           <div>
             <mat-icon class="text-info">add_alert</mat-icon>

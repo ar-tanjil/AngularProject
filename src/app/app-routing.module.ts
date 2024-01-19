@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: "form/edit/:id", component: RegisterComponent, canActivate: [AuthGuard] },
   { path: "form/add", component: RegisterComponent },
   { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
 ];
 

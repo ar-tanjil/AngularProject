@@ -9,20 +9,22 @@
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 0,
+      "salary": 50000,
       "joinDate": "2024-01-19T08:54:17.307Z",
       "email": "artanjil.at@gmail.com"
     },
     {
       "id": "tr",
-      "name": "Tanjil",
+      "name": "tanjil",
       "department": "administration",
       "designation": "manager",
       "gender": "male",
       "role": "tech",
       "isactive": true,
       "password": "123",
-      "email": ""
+      "salary": 25000,
+      "joinDate": "2024-01-06T18:00:00.000Z",
+      "email": "artanjil.at@gmail.com"
     }
   ],
   "role": [

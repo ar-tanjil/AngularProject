@@ -37,7 +37,7 @@ export class DashboardComponent implements DoCheck {
       this.employee = true;
       this.dahsboard = false;
       this.profile = false;
-    } else if (url.startsWith("/profile")) {
+    } else if (url =="/profile") {
       this.profile = true;
       this.dahsboard = false;
       this.employee = false;

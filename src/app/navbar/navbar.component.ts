@@ -13,11 +13,12 @@ export class NavbarComponent {
 
 
   sideNav: boolean = true;
-
+  date: Date;
 
   isAdmin: boolean;
   constructor(private route: Router, private model: Model, private messageService: MessageService) {
     this.isAdmin = model.isAdmin();
+    this.date = new Date();
   }
 
 
