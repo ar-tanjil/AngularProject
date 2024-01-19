@@ -13,7 +13,7 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: #f0efef;
+    background-color: rgb(255, 255, 255);
   }
   
   li {
@@ -22,14 +22,24 @@
   
   li a {
     display: block;
-    color: rgb(9, 9, 9);
     text-align: center;
+    color: rgb(0, 0, 0);
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bolder;
   }
 
   li a:hover {
-    background-color: #683333;
+    background-color: #f2f6dd;
+    
+  
+  }
+
+  .active {
+    background-color: #eaf1c4;
+    size: 1.3rem;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
   }
 
 

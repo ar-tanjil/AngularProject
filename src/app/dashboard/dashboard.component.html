@@ -9,9 +9,9 @@
         />
       </div>
       <ul>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="">Employee</a></li>
-        <li><a [routerLink]="['/profile', id]">Profile</a></li>
+        <li><a routerLink="/display" [class.active]="dahsboard">Dashboard</a></li>
+        <li><a routerLink="/home" [class.active]="employee">Employee</a></li>
+        <li><a [routerLink]="['/profile', id]" [class.active]="profile">Profile</a></li>
       </ul>
     </div>
   </mat-sidenav>

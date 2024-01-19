@@ -5,13 +5,15 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/routing.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { DisplayComponent } from './display/display.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "", component: DisplayComponent, canActivate: [AuthGuard] },
+  { path: "display", component: DisplayComponent, canActivate: [AuthGuard] },
   { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
-  { path: "form/:mode/:id", component: RegisterComponent },
-  { path: "form/:mode", component: RegisterComponent },
-  { path: "profile/:id", component: ProfileComponent },
+  { path: "form/edit/:id", component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: "form/add", component: RegisterComponent },
+  { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
 ];
 

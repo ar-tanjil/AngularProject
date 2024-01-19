@@ -1,4 +1,5 @@
 <div class="p-1">
+  <button *ngIf="admin" routerLink="/form/add" mat-raised-button color="primary" class="my-3" style="float: right; margin-right: 15px;">Add New Employee</button>
   <table class="table table-hover mat-elevation-z8 w-100">
     <thead class="thead-dark">
       <tr class="text-center">
@@ -30,8 +31,8 @@
         </td>
 
         <td [matMenuTriggerFor]="menu1" *ngIf="admin">
-          <a href="#">
-            <mat-icon>reorder</mat-icon>
+          <a>
+            <mat-icon style="cursor: pointer;" class="text-info">reorder</mat-icon>
             <mat-menu #menu1="matMenu">
               <button mat-menu-item (click)="updateuser(emp.id)">
                 <mat-icon>info</mat-icon>Update

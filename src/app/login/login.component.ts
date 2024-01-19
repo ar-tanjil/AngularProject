@@ -34,7 +34,7 @@ export class LoginComponent {
           if (this.employee.isactive) {
             sessionStorage.setItem('username', this.employee.id);
             sessionStorage.setItem('role', this.employee.role);
-            this.router.navigateByUrl("/home");
+            this.router.navigateByUrl("/");
           } else {
             this.toastr.error("Please contact Admin", "InActive User")
           }

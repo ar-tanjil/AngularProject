@@ -1,15 +1,7 @@
-<!-- <div *ngIf="isMenuVisible">
-    <app-navbar></app-navbar>
-</div>
-
-<router-outlet></router-outlet> -->
 <div>
-  <div>
-   
-  </div>
   <div *ngIf="isMenuVisible">
     <app-dashboard>
-        <app-navbar></app-navbar>
+      <app-navbar></app-navbar>
       <router-outlet></router-outlet>
     </app-dashboard>
   </div>

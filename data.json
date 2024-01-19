@@ -20,7 +20,7 @@
       "designation": "manager",
       "gender": "male",
       "role": "tech",
-      "isactive": false,
+      "isactive": true,
       "password": "123",
       "email": ""
     }

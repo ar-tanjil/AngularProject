@@ -1,37 +1,28 @@
 <mat-card>
-  <mat-card-content>
-    <ul>
-      <li>
-        <a (click)="toggle()"
-          ><mat-icon class="text-white">vertical_split</mat-icon>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/home">Home</a>
-      </li>
-      <li [matMenuTriggerFor]="menu1">
-        <a href="#"
-          >Menu
-          <mat-menu #menu1="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </a>
-      </li>
+  <mat-card-content style="margin: 0; padding: 8px">
+    <mat-card>
+      <mat-card-content
+        style="padding: 0; background-color: rgb(198, 253, 253)"
+      >
+        <div style="display: flex; flex-direction: row; gap: 15px">
+          <div>
+            <mat-icon (click)="toggle()" class="text-info"
+              >vertical_split</mat-icon
+            >
+          </div>
 
-      <li style="float: right" *ngIf="isAdmin">
-        <a
-          routerLink="/form/register"
-          style="cursor: pointer"
-          class="text-white"
-          >Register new Employee</a
-        >
-      </li>
-      <li style="float: right">
-        <a (click)="logOut()" style="cursor: pointer" class="text-white"
-          >Log Out</a
-        >
-      </li>
-    </ul>
+          <div style="width: 90%"></div>
+
+          <div>
+            <mat-icon class="text-info">add_alert</mat-icon>
+          </div>
+          <div>
+            <mat-icon class="text-danger" (click)="logOut()"
+              >exit_to_app</mat-icon
+            >
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </mat-card-content>
 </mat-card>

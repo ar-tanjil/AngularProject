@@ -15,6 +15,7 @@ import { MaterialModule } from 'src/material.module';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DisplayComponent } from './display/display.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
     UpdatepopupComponent,
     DashboardComponent,
     ProfileComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,
