@@ -1,9 +1,8 @@
-
-<div class="card m-2 mt-5 d-flex align-items-center justify-content-center h-75">
+<div class="card m-2">
   <div class="card-body">
     <h1 class="card-title" *ngIf="!editing">Register Form</h1>
-    <h1 class="card-title" *ngIf="editing"
-      >Edit {{ employee.name | titlecase }} Details
+    <h1 class="card-title" *ngIf="editing">
+      Edit {{ employee.name | titlecase }} Details
     </h1>
     <form
       class="example-form"
@@ -26,18 +25,70 @@
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email" required />
       </mat-form-field>
+      <mat-form-field class="example-full-width" *ngIf="isAdmin">
+        <mat-label>Salary</mat-label>
+        <input
+          matInput
+          placeholder="Salary"
+          type="number"
+          formControlName="salary"
+          required
+        />
+      </mat-form-field>
       <div>
+        <mat-label>Gender</mat-label>
         <mat-radio-group formControlName="gender" aria-label="Select an option">
           <mat-radio-button value="male">Male</mat-radio-button>
           <mat-radio-button value="female">Female</mat-radio-button>
         </mat-radio-group>
       </div>
-      <div>
-        <button mat-raised-button class="mx-5" color="primary">
-          Submit
-        </button>
-        <a routerLink="/login" *ngIf="!isLoggedIn" mat-raised-button color="accent">Back to Login</a>
-        <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button color="accent">Back to Home</a>
+      <div style="display: flex; justify-content: space-around" *ngIf="isAdmin">
+        <mat-form-field>
+          <mat-label>Select Designation</mat-label>
+          <mat-select formControlName="designation" name="designation">
+            <mat-option
+              *ngFor="let dessig of designationList"
+              [value]="dessig.code"
+            >
+              {{ dessig.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Select Department</mat-label>
+          <mat-select formControlName="department" name="department">
+            <mat-option *ngFor="let food of departmentList" [value]="food.code">
+              {{ food.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter Joining Date</mat-label>
+          <input matInput formControlName="joinDate" [matDatepicker]="picker" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <div>
+          <button mat-raised-button class="mx-5" color="primary">Submit</button>
+        </div>
+        <div>
+          <a
+            routerLink="/login"
+            *ngIf="!isLoggedIn"
+            mat-raised-button
+            color="accent"
+            >Back to Login</a
+          >
+          <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button color="accent"
+            >Back to Home</a
+          >
+        </div>
       </div>
     </form>
   </div>

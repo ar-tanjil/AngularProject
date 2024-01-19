@@ -9,17 +9,21 @@
       "role": "admin",
       "isactive": true,
       "password": "123",
+      "salary": 50000,
+      "joinDate": "2023-07-11T18:00:00.000Z",
       "email": "artanjil@hotmail.com"
     },
     {
       "id": "tr",
-      "name": "tanjil",
+      "name": "Tanjil",
       "department": "administration",
-      "designation": "staff",
+      "designation": "manager",
       "gender": "male",
       "role": "tech",
       "isactive": true,
       "password": "123",
+      "salary": 25000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "artanjil@hotmail.com"
     }
   ],
@@ -37,6 +41,12 @@
     {
       "code": "administration",
       "name": "Administration"
+    }
+  ],
+  "disignation": [
+    {
+      "code": "manager",
+      "name": "Manager"
     }
   ]
 }

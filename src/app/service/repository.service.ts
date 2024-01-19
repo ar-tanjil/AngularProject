@@ -12,6 +12,7 @@ export class Model {
     private replaySubject: ReplaySubject<Employee[]>;
     private rolelist: any;
     private departmentList: any;
+    private designationList: any;
 
     constructor(private dataSource: DataSource) {
         this.employee = new Array<Employee>();
@@ -28,6 +29,10 @@ export class Model {
 
         this.dataSource.getuserrole().subscribe(roles => {
             this.rolelist = roles;
+        })
+
+        this.dataSource.getDesignation().subscribe(designation => {
+            this.designationList = designation;
         })
     }
 
@@ -95,6 +100,10 @@ export class Model {
 
     getDepartmentList(): Department[] {
         return this.departmentList;
+    }
+
+    getDesignationLis(){
+        return this.designationList;
     }
 
 }

@@ -1,7 +1,11 @@
 <mat-card>
   <mat-card-content>
     <ul>
-     
+      <li>
+        <a (click)="toggle()"
+          ><mat-icon class="text-white">vertical_split</mat-icon>
+        </a>
+      </li>
       <li>
         <a routerLink="/home">Home</a>
       </li>
@@ -14,20 +18,19 @@
           </mat-menu>
         </a>
       </li>
-      <li [matMenuTriggerFor]="menu2">
-        <a href="#"
-          >Menu
-          <mat-menu #menu2="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </a>
+
+      <li style="float: right" *ngIf="isAdmin">
+        <a
+          routerLink="/form/register"
+          style="cursor: pointer"
+          class="text-white"
+          >Register new Employee</a
+        >
       </li>
-      <li style="float: right;" *ngIf="isAdmin">
-        <a routerLink="/form/register" style="cursor: pointer;" class="text-white">Register new Employee</a>
-      </li>
-      <li style="float: right;">
-        <a (click)="logOut()" style="cursor: pointer;" class="text-white">Log Out</a>
+      <li style="float: right">
+        <a (click)="logOut()" style="cursor: pointer" class="text-white"
+          >Log Out</a
+        >
       </li>
     </ul>
   </mat-card-content>

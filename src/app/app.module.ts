@@ -13,6 +13,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
     HomeComponent,
     NavbarComponent,
     UpdatepopupComponent,
+    DashboardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

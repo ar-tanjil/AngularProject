@@ -1,4 +1,4 @@
-export class Employee{
+export class Employee {
     constructor(
         public id?: string,
         public name?: string,
@@ -7,6 +7,8 @@ export class Employee{
         public gender?: string,
         public role?: string,
         public isactive?: boolean,
-        public password?: string
-    ){}
+        public password?: string,
+        public salary?: number,
+        public joinDate?: Date,
+    ) { }
 }

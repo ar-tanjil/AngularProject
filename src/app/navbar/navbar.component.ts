@@ -1,6 +1,7 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Model } from '../service/repository.service';
+import { MessageService } from '../service/messageService';
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +10,26 @@ import { Model } from '../service/repository.service';
 })
 export class NavbarComponent {
 
-isAdmin: boolean;
-      constructor(private route: Router, private model: Model){
-          this.isAdmin = model.isAdmin();
-      }
 
-      
 
-     
+  sideNav: boolean = true;
 
-      logOut(){
-        sessionStorage.clear();
-        this.route.navigateByUrl("/login");
-      }
+
+  isAdmin: boolean;
+  constructor(private route: Router, private model: Model, private messageService: MessageService) {
+    this.isAdmin = model.isAdmin();
+  }
+
+
+  logOut() {
+    sessionStorage.clear();
+    this.route.navigateByUrl("/login");
+  }
+
+
+  toggle() {
+    this.sideNav = this.sideNav ? false : true;
+    this.messageService.setProduct(this.sideNav);
+  }
+
 }

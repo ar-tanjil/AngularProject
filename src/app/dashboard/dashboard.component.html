@@ -1,0 +1,25 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <div class="card">
+      <div>
+        <img
+          src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-background-material-design-for-lorem-ipsum-logo-png-image_3624650.jpg"
+          alt=""
+          width="100px"
+        />
+      </div>
+      <ul>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="">Employee</a></li>
+        <li><a [routerLink]="['/profile', id]">Profile</a></li>
+      </ul>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+    <p>
+      <!-- <button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button> -->
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

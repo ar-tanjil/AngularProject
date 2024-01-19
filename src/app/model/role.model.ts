@@ -1,4 +1,4 @@
 export interface Role{
     code: string;
-    name: string;
+    name: string
 }

@@ -1,32 +1,23 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Employee } from '../model/employee.model';
 import { Model } from '../service/repository.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Employee } from '../model/employee.model';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class RegisterComponent {
-
+export class ProfileComponent {
   employee: Employee = new Employee();
-  editing: boolean = false;
   isLoggedIn: boolean = false;
-  isAdmin: boolean = false;
-  designationList: any;
-  departmentList: any;
 
   constructor(public model: Model, activeRoute: ActivatedRoute,
-    public router: Router, private builder: FormBuilder, public toaster: ToastrService) {
+    public router: Router, private builder: FormBuilder) {
     this.isLoggedIn = this.model.isloggedin();
-    this.isAdmin = this.model.isAdmin();
-    this.departmentList = this.model.getDepartmentList();
-    this.designationList = this.model.getDesignationLis();
+
     activeRoute.params.subscribe(params => {
-      this.editing = params["mode"] == "edit";
       let id = params["id"];
       if (id != null) {
         model.getEmployeeObservable(id).subscribe(p => {
@@ -50,21 +41,6 @@ export class RegisterComponent {
     salary: this.builder.control(0),
     joinDate: this.builder.control(new Date())
   });
-
-
-  submitForm() {
-    if (this.registerform.valid) {
-      Object.assign(this.employee, this.registerform.value);
-      this.model.saveEmployee(this.employee);
-      this.toaster.success("Save Succefull");
-      this.router.navigateByUrl("/");
-    } else {
-      this.toaster.error("Enter valid data")
-    }
-
-
-  }
-
 
 
 }

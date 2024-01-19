@@ -38,7 +38,10 @@ export class DataSource {
 
     getDepartment() {
         return this.http.get('http://localhost:3500/department');
+    }
 
+    getDesignation(){
+        return this.http.get('http://localhost:3500/disignation');
     }
 
 

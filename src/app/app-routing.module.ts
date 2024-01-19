@@ -4,13 +4,15 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/routing.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent, canActivate:[AuthGuard]},
-  {path:"home", component:HomeComponent, canActivate:[AuthGuard]},
-  {path: "form/:mode/:id", component:RegisterComponent},
-  {path: "form/:mode", component:RegisterComponent},
-  {path: "login", component: LoginComponent},
+  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "form/:mode/:id", component: RegisterComponent },
+  { path: "form/:mode", component: RegisterComponent },
+  { path: "profile/:id", component: ProfileComponent },
+  { path: "login", component: LoginComponent },
 ];
 
 @NgModule({

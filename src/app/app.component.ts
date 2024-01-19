@@ -1,5 +1,6 @@
-import { Component, DoCheck } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,8 @@ export class AppComponent implements DoCheck{
     }else{
       this.isadmin = false;
     }
-
   }
+
+ 
+
 }
