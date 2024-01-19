@@ -13,12 +13,14 @@ export class Model {
     private rolelist: any;
     private departmentList: any;
     private designationList: any;
+    private userNameList: string[] = [];
 
     constructor(private dataSource: DataSource) {
         this.employee = new Array<Employee>();
         this.replaySubject = new ReplaySubject<Employee[]>(1);
         this.dataSource.getData().subscribe(data => {
             this.employee = data;
+            this.retriveUserName(this.employee);
             this.replaySubject.next(data);
             this.replaySubject.complete();
         })
@@ -45,6 +47,10 @@ export class Model {
     }
 
 
+
+    getUserNameList() {
+        return this.userNameList;
+    }
 
     getEmployeeObservable(id: string): Observable<Employee | undefined> {
         let subject = new ReplaySubject<Employee | undefined>(1);
@@ -82,6 +88,11 @@ export class Model {
     }
 
 
+    private retriveUserName(employee: Employee[]) {
+        employee.forEach(x => this.userNameList.push(x.id ?? ""))
+    }
+
+
     isloggedin() {
         return sessionStorage.getItem('username') != null;
     }
@@ -102,7 +113,7 @@ export class Model {
         return this.departmentList;
     }
 
-    getDesignationLis(){
+    getDesignationLis() {
         return this.designationList;
     }
 

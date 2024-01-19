@@ -18,6 +18,9 @@ export class RegisterComponent {
   isAdmin: boolean = false;
   designationList: any;
   departmentList: any;
+  userNameList: string[];
+  userInput: boolean = false;
+  firstId: string = "";
 
   constructor(public model: Model, activeRoute: ActivatedRoute,
     public router: Router, private builder: FormBuilder, public toaster: ToastrService) {
@@ -25,9 +28,11 @@ export class RegisterComponent {
     this.isAdmin = this.model.isAdmin();
     this.departmentList = this.model.getDepartmentList();
     this.designationList = this.model.getDesignationLis();
+    this.userNameList = this.model.getUserNameList();
     activeRoute.params.subscribe(params => {
       this.editing = params["mode"] == "edit";
       let id = params["id"];
+      this.firstId = id;
       if (id != null) {
         model.getEmployeeObservable(id).subscribe(p => {
           Object.assign(this.employee, p || new Employee());
@@ -52,8 +57,25 @@ export class RegisterComponent {
   });
 
 
+
+  private findUser(id: string) {
+    if (id == this.firstId) {
+      return false;
+    } else {
+      return this.userNameList.find(x => x == id);
+    }
+
+  }
+
+
+
   submitForm() {
-    if (this.registerform.valid) {
+    if (this.findUser(this.registerform.value.id ?? "")) {
+      this.registerform.controls["id"].setErrors({
+        'incorrect': true
+      })
+      this.toaster.error("User Name is not avialvel");
+    } else if (this.registerform.valid) {
       Object.assign(this.employee, this.registerform.value);
       this.model.saveEmployee(this.employee);
       this.toaster.success("Save Succefull");
@@ -61,8 +83,6 @@ export class RegisterComponent {
     } else {
       this.toaster.error("Enter valid data")
     }
-
-
   }
 
 

@@ -2,16 +2,16 @@
   "employee": [
     {
       "id": "ar",
-      "name": "Ashiq",
+      "name": "ashiq",
       "department": "administration",
       "designation": "manager",
       "gender": "male",
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
-      "joinDate": "2023-07-11T18:00:00.000Z",
-      "email": "artanjil@hotmail.com"
+      "salary": 0,
+      "joinDate": "2024-01-19T08:54:17.307Z",
+      "email": "artanjil.at@gmail.com"
     },
     {
       "id": "tr",
@@ -20,11 +20,9 @@
       "designation": "manager",
       "gender": "male",
       "role": "tech",
-      "isactive": true,
+      "isactive": false,
       "password": "123",
-      "salary": 25000,
-      "joinDate": "2023-12-31T18:00:00.000Z",
-      "email": "artanjil@hotmail.com"
+      "email": ""
     }
   ],
   "role": [

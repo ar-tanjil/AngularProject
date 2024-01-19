@@ -12,11 +12,11 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 })
 export class HomeComponent {
 
- 
+ admin: boolean;
 
   constructor(private model: Model, public dialog: MatDialog, 
     private service: DataSource) {
-      
+      this.admin = this.model.isAdmin();
   };
 
 

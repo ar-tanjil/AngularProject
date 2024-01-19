@@ -9,9 +9,9 @@
       [formGroup]="registerform"
       (ngSubmit)="submitForm()"
     >
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" *ngIf="!editing">
         <mat-label>User Name</mat-label>
-        <input matInput placeholder="Enter User Name" formControlName="id" />
+        <input matInput placeholder="Enter User Name" formControlName="id"  />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
