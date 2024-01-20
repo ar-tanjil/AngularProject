@@ -3,10 +3,21 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Employee } from "../model/employee.model";
 import { Role } from "../model/role.model";
+import { Leave } from "../model/leave";
+import { Department } from "../model/department.model";
+import { Designation } from "../model/desigantion.model";
+
 export const REST_URL = new InjectionToken("rest_url");
 
 @Injectable()
 export class DataSource {
+
+    roleUrl = `http://${location.hostname}:3500/role`
+    departUrl = `http://${location.hostname}:3500/department`
+    desigUrl = `http://${location.hostname}:3500/disignation`
+    leaveUrl = `http://${location.hostname}:3500/leaveRequest`
+
+
     constructor(private http: HttpClient,
         @Inject(REST_URL) private url: string) {
     }
@@ -32,21 +43,34 @@ export class DataSource {
         return this.sendRequest<Employee>("DELETE", `${this.url}/${id}`);
     }
 
-    getuserrole() {
-        return this.http.get('http://localhost:3500/role');
+    getuserrole(): Observable<Role> {
+        return this.sendRequest<Role>("GET", this.roleUrl);
     }
 
-    getDepartment() {
-        return this.http.get('http://localhost:3500/department');
+    getDepartment(): Observable<Department> {
+        return this.sendRequest<Department>("GET", this.departUrl);
     }
 
-    getDesignation(){
-        return this.http.get('http://localhost:3500/disignation');
+    getDesignation(): Observable<Designation> {
+        return this.sendRequest<Designation>("GET", this.desigUrl);
+    }
+
+
+    saveLeaveRequst(leave: Leave) {
+        return this.sendRequest<Designation>("POST", this.leaveUrl, leave);
+    }
+
+    getLeaveRequst() {
+        return this.sendRequest<Designation>("GET", this.leaveUrl);
+    }
+
+    updateLeaveRequest(leave: Leave) {
+        return this.sendRequest<Designation>("GET", `${this.leaveUrl}/${leave.id}`, leave);
     }
 
 
     private sendRequest<T>(verb: string, url: string,
-        body?: Employee): Observable<T> {
+        body?: Employee | Role | Leave | Department | Designation): Observable<T> {
         return this.http.request<T>(verb, url, {
             body: body
         });

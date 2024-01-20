@@ -1,9 +1,9 @@
-import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Model } from '../service/repository.service';
-import { Employee } from '../model/employee.model';
 import { DataSource } from '../service/db.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +12,40 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 })
 export class HomeComponent {
 
- admin: boolean;
+  admin: boolean;
 
-  constructor(private model: Model, public dialog: MatDialog, 
+  constructor(private model: Model, public dialog: MatDialog,
     private service: DataSource) {
-      this.admin = this.model.isAdmin();
+    this.admin = this.model.isAdmin();
   };
 
+  sortValue: string = "All";
 
-getEmployee(){
-  return this.model.getAllEmployee();
-}
+
+
+
+  lowValue: number = 0;
+  highValue: number = 20;
+
+
+  // used to build a slice of papers relevant at any given time
+  public getPaginatorData(event: PageEvent): PageEvent {
+    this.lowValue = event.pageIndex * event.pageSize;
+    this.highValue = this.lowValue + event.pageSize;
+    return event;
+  }
+
+
+
+
+
+  toggleMenu(name: string) {
+    this.sortValue = name;
+  }
+
+  getEmployee() {
+    return this.model.getAllEmployee();
+  }
 
 
 
@@ -40,7 +63,7 @@ getEmployee(){
       }
     });
     popup.afterClosed().subscribe(res => {
-      
+
     });
   }
 

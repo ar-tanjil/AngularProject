@@ -16,6 +16,9 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DisplayComponent } from './display/display.component';
+import { FilterPipe } from './customPipe/catagoryPipe';
+import { NotificationPopupComponent } from './notification-popup/notification-popup.component';
+import { LeaveRequstComponent } from './leave-requst/leave-requst.component';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { DisplayComponent } from './display/display.component';
     DashboardComponent,
     ProfileComponent,
     DisplayComponent,
+    FilterPipe,
+    NotificationPopupComponent,
+    LeaveRequstComponent
   ],
   imports: [
     BrowserModule,

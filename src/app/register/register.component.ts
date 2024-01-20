@@ -79,7 +79,7 @@ export class RegisterComponent {
       Object.assign(this.employee, this.registerform.value);
       this.model.saveEmployee(this.employee);
       this.toaster.success("Save Succefull");
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/home");
     } else {
       this.toaster.error("Enter valid data")
     }

@@ -3,6 +3,7 @@ import { Model } from '../service/repository.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Employee } from '../model/employee.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -11,17 +12,27 @@ import { Employee } from '../model/employee.model';
 })
 export class ProfileComponent {
   employee: Employee = new Employee();
-  isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
+  currentAdmin: boolean = false;
+
 
   constructor(public model: Model, activeRoute: ActivatedRoute,
-    public router: Router, private builder: FormBuilder) {
-    this.isLoggedIn = this.model.isloggedin();
-
+    public router: Router, private builder: FormBuilder, private toast: ToastrService) {
+    this.isAdmin = this.model.isAdmin();
     activeRoute.params.subscribe(params => {
       let id = params["id"];
-      if(id == null){
-        id = sessionStorage.getItem("username");
+      console.log(id);
+      
+
+      let adminId = sessionStorage.getItem("username");
+
+      if(id != null && id != adminId){
+        this.currentAdmin = false;
+      } else{
+        this.currentAdmin = true;
+        id = adminId;
       }
+
       if (id != null) {
         model.getEmployeeObservable(id).subscribe(p => {
           Object.assign(this.employee, p || new Employee());
@@ -45,5 +56,11 @@ export class ProfileComponent {
     joinDate: this.builder.control(new Date())
   });
 
+
+
+  delete() {
+      this.model.deleteEmployee(this.employee.id ?? "");
+      this.toast.success("Delete Successfully")
+  }
 
 }

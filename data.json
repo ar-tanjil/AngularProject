@@ -2,51 +2,97 @@
   "employee": [
     {
       "id": "ar",
-      "name": "ashiq",
+      "name": "Ashiq",
       "department": "administration",
       "designation": "manager",
       "gender": "male",
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
-      "joinDate": "2024-01-19T08:54:17.307Z",
-      "email": "artanjil.at@gmail.com"
+      "salary": 500000,
+      "joinDate": "2024-01-09T18:00:00.000Z",
+      "email": "artanjil@hotmail.com"
     },
     {
       "id": "tr",
-      "name": "tanjil",
-      "department": "administration",
+      "name": "Tanjil",
+      "department": "sales",
       "designation": "manager",
       "gender": "male",
-      "role": "tech",
+      "role": "sales",
       "isactive": true,
       "password": "123",
-      "salary": 25000,
-      "joinDate": "2024-01-06T18:00:00.000Z",
-      "email": "artanjil.at@gmail.com"
+      "salary": 500000,
+      "joinDate": "2024-01-09T18:00:00.000Z",
+      "email": "artanjil@hotmail.com"
+    },
+    {
+      "id": "ab",
+      "name": "Abeer",
+      "department": "account",
+      "designation": "manager",
+      "gender": "male",
+      "role": "accountent",
+      "isactive": true,
+      "password": "123",
+      "email": ""
+    },
+    {
+      "id": "ta",
+      "name": "Ashiqur",
+      "department": "purchase",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "purchase",
+      "isactive": true,
+      "password": "123",
+      "email": ""
     }
   ],
   "role": [
     {
-      "code": "user",
-      "name": "User"
+      "code": "sales",
+      "name": "Sales Officer"
     },
     {
-      "code": "tech",
-      "name": "Technician"
+      "code": "accountent",
+      "name": "Accountent"
+    },
+    {
+      "code": "admin",
+      "name": "Admin"
+    },
+    {
+      "code": "purchase",
+      "name": "Purchase Officer"
     }
   ],
   "department": [
     {
       "code": "administration",
       "name": "Administration"
+    },
+    {
+      "code": "account",
+      "name": "Account"
+    },
+    {
+      "code": "sales",
+      "name": "Sales"
+    },
+    {
+      "code": "purchase",
+      "name": "Purchase"
     }
   ],
   "disignation": [
     {
       "code": "manager",
       "name": "Manager"
+    },
+    {
+      "code": "trainee",
+      "name": "Trainee"
     }
   ]
 }

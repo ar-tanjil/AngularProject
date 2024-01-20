@@ -2,26 +2,53 @@
   <mat-card-content>
     <div class="d-flex">
       <div style="width: 40%"></div>
-      <div><h1 class="fw-bolder">{{employee.name | titlecase}} Details</h1></div>
+      <div>
+        <h1 class="fw-bolder">{{employee.name | titlecase}} Details</h1>
+      </div>
       <div style="width: 40%"></div>
     </div>
   </mat-card-content>
 </mat-card>
 
-<mat-card class="mt-3">
-  <mat-card-content>
-    <h3>Name: {{employee.name | titlecase}} </h3>
-    <h3>Gender: {{employee.gender | titlecase}} </h3>
-    <h3>Email: {{employee.email}} </h3>
-    <h3>Department: {{employee.department | titlecase}} </h3>
-    <h3>Designation: {{employee.designation | titlecase}} </h3>
-    <h3>Join Date: {{employee.joinDate | date : "fullDate"}} </h3>
-    <h3>salary: {{employee.salary | number : ".2-2"}} </h3>
-  </mat-card-content>
-</mat-card>
-
-<div style="display: flex; justify-content: center; margin-top: 8px;">
-  <div>
-    <button mat-raised-button class="mx-5" color="primary" [routerLink]="['/form', 'edit', employee.id]" >Edit</button>
+<div style="display: flex; justify-content:left; margin-top: 8px;">
+  <div class="m-1">
+    <button mat-raised-button color="primary" [routerLink]="['/form', 'edit', employee.id]">Edit</button>
+  </div>
+  <div *ngIf="isAdmin && !currentAdmin" class="m-1">
+    <button mat-raised-button class="bg-danger " (click)="delete()" >Delete</button>
+  </div>
+  <div style="flex: auto;"></div>
+  <div class="m-1">
+    <button mat-raised-button color="warn">Leave Request</button>
   </div>
 </div>
+
+
+<mat-card class="mt-3">
+  <mat-card-content>
+    <div class="row">
+      <div class="col">
+        <mat-card>
+          <mat-card-content style="background-color: rgb(200, 219, 213);" >
+            <h1 class="text-center fw-bolder">Profile</h1>
+          </mat-card-content>
+        </mat-card>
+     
+        <h3>Name: {{employee.name | titlecase}} </h3>
+        <h3>Gender: {{employee.gender | titlecase}} </h3>
+        <h3>Email: {{employee.email}} </h3>
+        <h3>Department: {{employee.department | titlecase}} </h3>
+        <h3>Designation: {{employee.designation | titlecase}} </h3>
+        <h3>Join Date: {{employee.joinDate | date : "fullDate"}} </h3>
+        <h3>salary: {{employee.salary | number : ".2-2"}} </h3>
+      </div>
+      <div class="col">
+        <mat-card>
+          <mat-card-content style="background-color: rgb(148, 161, 126);" >
+            <h1 class="text-center fw-bolder">Assinged Task</h1>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

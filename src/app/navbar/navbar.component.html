@@ -10,13 +10,14 @@
               >vertical_split</mat-icon
             >
           </div>
-          <div style="width: 90%"></div>
+          <div style="flex:auto"></div>
           <div style="display: flex; align-items: center;">
             <h4 style="margin: 0; font-weight: bold;"> {{date | date : 'EE, MMMM d-yyyy'}} </h4>
           </div>
 
           <div>
-            <mat-icon class="text-info">add_alert</mat-icon>
+            <mat-icon aria-hidden="true" class="text-info"  matBadge="8" matBadgeColor="accent" (click)="seeNotification()">add_alert</mat-icon>
+            <!-- <button class="btn btn-sm">Notification</button> -->
           </div>
           <div>
             <mat-icon class="text-danger" (click)="logOut()"

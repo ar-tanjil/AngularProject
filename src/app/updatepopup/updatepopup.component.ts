@@ -15,7 +15,6 @@ export class UpdatepopupComponent {
     private dialogref: MatDialogRef<UpdatepopupComponent>, @Inject(MAT_DIALOG_DATA) public data: Employee) {
     this.rolelist = this.service.getRoleList();
     this.departmentList = this.service.getDepartmentList();
-
   }
 
 
@@ -25,25 +24,27 @@ export class UpdatepopupComponent {
     }
   }
   rolelist: any;
-  editdata: any;
+  editdata!: Employee;
   departmentList:any;
 
   registerform = this.builder.group({
     id: this.builder.control(''),
     name: this.builder.control(''),
     password: this.builder.control(''),
-    email: this.builder.control(''),
     gender: this.builder.control('male'),
     designation: this.builder.control(""),
     department: this.builder.control(""),
     role: this.builder.control('', Validators.required),
-    isactive: this.builder.control(false)
+    isactive: this.builder.control(false),
+    email: this.builder.control(""),
+    salary: this.builder.control(0),
+    joinDate: this.builder.control(new Date())
   });
 
   loaduserdata(code: string) {
     this.service.getEmployeeObservable(code).subscribe(emp => {
-      this.editdata = emp;
-      this.registerform.setValue(this.editdata);
+      this.editdata = emp ?? new Employee();
+      this.registerform.patchValue(this.editdata);
     })
   }
 

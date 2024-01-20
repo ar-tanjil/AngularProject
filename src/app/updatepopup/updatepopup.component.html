@@ -4,15 +4,15 @@
 
         <mat-form-field>
             <mat-label>Role</mat-label>
-            <mat-select formControlName="role">
+            <mat-select formControlName="role" required>
                 <mat-option *ngFor="let item of rolelist" [value]="item.code">
                     {{item.name}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Role</mat-label>
-            <mat-select formControlName="department">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department" required>
                 <mat-option *ngFor="let item of departmentList" [value]="item.code">
                     {{item.name}}
                 </mat-option>

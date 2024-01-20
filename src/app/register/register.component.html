@@ -82,11 +82,11 @@
             routerLink="/login"
             *ngIf="!isLoggedIn"
             mat-raised-button
-            color="accent"
+           class="bg-info"
             >Back to Login</a
           >
-          <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button color="accent"
-            >Back to Home</a
+          <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button class="bg-info-subtle"
+            >Back</a
           >
         </div>
       </div>

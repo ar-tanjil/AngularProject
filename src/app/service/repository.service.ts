@@ -63,7 +63,7 @@ export class Model {
 
 
     saveEmployee(employee: Employee) {
-        if (!this.locator(employee, employee.id)) {
+        if (!this.employee.find(x => x.id == employee.id)) {
             this.dataSource.saveData(employee)
                 .subscribe(p => this.employee.push(p));
         } else {
