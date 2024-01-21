@@ -3,49 +3,78 @@
     <div class="d-flex">
       <div style="width: 40%"></div>
       <div>
-        <h1 class="fw-bolder">{{employee.name | titlecase}} Details</h1>
+        <h1 class="fw-bolder">{{ employee.name | titlecase }} Details</h1>
       </div>
       <div style="width: 40%"></div>
     </div>
   </mat-card-content>
 </mat-card>
 
-<div style="display: flex; justify-content:left; margin-top: 8px;">
+<div style="display: flex; justify-content: left; margin-top: 8px">
   <div class="m-1">
-    <button mat-raised-button color="primary" [routerLink]="['/form', 'edit', employee.id]">Edit</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/form', 'edit', employee.id]"
+    >
+      Edit
+    </button>
   </div>
   <div *ngIf="isAdmin && !currentAdmin" class="m-1">
-    <button mat-raised-button class="bg-danger " (click)="delete()" >Delete</button>
+    <button mat-raised-button class="bg-danger" (click)="delete()">
+      Delete
+    </button>
   </div>
-  <div style="flex: auto;"></div>
+  <div style="flex: auto"></div>
   <div class="m-1">
-    <button mat-raised-button color="warn">Leave Request</button>
+    <button mat-raised-button color="warn" [routerLink]="['/leave']">
+      Leave Request
+    </button>
   </div>
 </div>
-
 
 <mat-card class="mt-3">
   <mat-card-content>
     <div class="row">
       <div class="col">
         <mat-card>
-          <mat-card-content style="background-color: rgb(200, 219, 213);" >
+          <mat-card-content style="background-color: rgb(200, 219, 213)">
             <h1 class="text-center fw-bolder">Profile</h1>
           </mat-card-content>
         </mat-card>
-     
-        <h3>Name: {{employee.name | titlecase}} </h3>
-        <h3>Gender: {{employee.gender | titlecase}} </h3>
-        <h3>Email: {{employee.email}} </h3>
-        <h3>Department: {{employee.department | titlecase}} </h3>
-        <h3>Designation: {{employee.designation | titlecase}} </h3>
-        <h3>Join Date: {{employee.joinDate | date : "fullDate"}} </h3>
-        <h3>salary: {{employee.salary | number : ".2-2"}} </h3>
+
+        <h3>Name: {{ employee.name | titlecase }}</h3>
+        <h3>Gender: {{ employee.gender | titlecase }}</h3>
+        <h3>Email: {{ employee.email }}</h3>
+        <h3>Department: {{ employee.department | titlecase }}</h3>
+        <h3>Designation: {{ employee.designation | titlecase }}</h3>
+        <h3>Join Date: {{ employee.joinDate | date : "fullDate" }}</h3>
+        <h3>salary: {{ employee.salary | number : ".2-2" }}</h3>
       </div>
       <div class="col">
         <mat-card>
-          <mat-card-content style="background-color: rgb(148, 161, 126);" >
-            <h1 class="text-center fw-bolder">Assinged Task</h1>
+          <mat-card-content style="background-color: rgb(148, 161, 126)">
+            <h1 class="text-center fw-bolder">Application Log</h1>
+            <table  class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Type</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of aplicationLog; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ data.type | titlecase }}</td>
+                  <td>{{ data.from | date : "dd-mm-yy" }}</td>
+                  <td>{{ data.to | date : "dd-mm-yy" }}</td>
+                  <td>{{ data.status }}</td>
+                </tr>
+              </tbody>
+            </table>
           </mat-card-content>
         </mat-card>
       </div>

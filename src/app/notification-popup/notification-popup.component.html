@@ -1,1 +1,24 @@
-<p>notification-popup works! {{editdata.id}} </p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Date</td>
+      <td>Type</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let leave of pendigLeave">
+      <td>{{ getName(leave.name ?? "") }}</td>
+      <td>
+        {{ leave.from | date : "dd-mm" }} to {{ leave.to | date : "dd-mm" }}
+      </td>
+      <td>
+        {{leave.type | titlecase}}
+      </td>
+      <td>
+        <button>Accept</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

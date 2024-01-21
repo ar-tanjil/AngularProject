@@ -43,29 +43,33 @@ export class DataSource {
         return this.sendRequest<Employee>("DELETE", `${this.url}/${id}`);
     }
 
-    getuserrole(): Observable<Role> {
-        return this.sendRequest<Role>("GET", this.roleUrl);
+    getuserrole(): Observable<Role[]> {
+        return this.sendRequest<Role[]>("GET", this.roleUrl);
     }
 
-    getDepartment(): Observable<Department> {
-        return this.sendRequest<Department>("GET", this.departUrl);
+    getDepartment(): Observable<Department[]> {
+        return this.sendRequest<Department[]>("GET", this.departUrl);
     }
 
-    getDesignation(): Observable<Designation> {
-        return this.sendRequest<Designation>("GET", this.desigUrl);
+    getDesignation(): Observable<Designation[]> {
+        return this.sendRequest<Designation[]>("GET", this.desigUrl);
     }
 
 
-    saveLeaveRequst(leave: Leave) {
-        return this.sendRequest<Designation>("POST", this.leaveUrl, leave);
+    saveLeaveRequest(leave: Leave): Observable<Leave> {
+        return this.sendRequest<Leave>("POST", this.leaveUrl, leave);
     }
 
-    getLeaveRequst() {
-        return this.sendRequest<Designation>("GET", this.leaveUrl);
+    getLeaveRequest(): Observable<Leave[]> {
+        return this.sendRequest<Leave[]>("GET", this.leaveUrl);
     }
 
-    updateLeaveRequest(leave: Leave) {
-        return this.sendRequest<Designation>("GET", `${this.leaveUrl}/${leave.id}`, leave);
+    updateLeaveRequest(leave: Leave): Observable<Leave> {
+        return this.sendRequest<Leave>("GET", `${this.leaveUrl}/${leave.id}`, leave);
+    }
+
+    deleteLeaveRequest(id: string): Observable<Leave> {
+        return this.sendRequest<Leave>("DELETE", `${this.leaveUrl}/${id}`);
     }
 
 

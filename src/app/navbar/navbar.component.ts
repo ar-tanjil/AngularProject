@@ -4,25 +4,33 @@ import { Model } from '../service/repository.service';
 import { MessageService } from '../service/messageService';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationPopupComponent } from '../notification-popup/notification-popup.component';
+import { LeaveService } from '../service/leaveService';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements DoCheck {
 
 
 
   sideNav: boolean = true;
   date: Date;
+  notification: number = 0;
 
 
   isAdmin: boolean;
-  constructor(private route: Router, private model: Model, private messageService: MessageService, public dialog: MatDialog) {
+  constructor(private route: Router, private model: Model, private messageService: MessageService,
+     public dialog: MatDialog, private leaveService: LeaveService) {
     this.isAdmin = model.isAdmin();
     this.date = new Date();
     
+  }
+
+
+  ngDoCheck(): void {
+      this.notification = this.leaveService.getAllPendigLeave().length;
   }
 
 

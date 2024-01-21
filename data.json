@@ -94,5 +94,70 @@
       "code": "trainee",
       "name": "Trainee"
     }
+  ],
+  "leaveRequest": [
+    {
+      "name": "ar",
+      "type": "sick",
+      "reason": "122",
+      "from": "2024-01-21T05:09:00.746Z",
+      "to": "2024-01-21T05:09:00.746Z",
+      "status": "pending",
+      "id": 1
+    },
+    {
+      "name": "ar",
+      "type": "sick",
+      "reason": "11254444",
+      "from": "2016-01-01T18:00:00.000Z",
+      "to": "2023-12-31T18:00:00.000Z",
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "bari zabo",
+      "from": "2024-01-21T18:00:00.000Z",
+      "to": "2024-01-21T05:29:20.672Z",
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "aaaaaaaaaaaa",
+      "from": "2024-01-21T18:00:00.000Z",
+      "to": "2024-01-07T18:00:00.000Z",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "name": "tr",
+      "type": "casual",
+      "reason": "Dont ask question it casual",
+      "from": "2024-01-21T06:00:42.603Z",
+      "to": "2024-01-21T06:00:42.603Z",
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "name": null,
+      "type": null,
+      "reason": null,
+      "from": null,
+      "to": null,
+      "status": null,
+      "id": 6
+    },
+    {
+      "name": null,
+      "type": null,
+      "reason": null,
+      "from": null,
+      "to": null,
+      "status": null,
+      "id": 7
+    }
   ]
 }

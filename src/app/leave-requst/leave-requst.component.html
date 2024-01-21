@@ -1,1 +1,50 @@
-<p>leave-requst works!</p>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  "
+>
+  <div class="card m-2">
+    <div class="card-body">
+      <h1 class="card-title">Aplication For Leave</h1>
+      <form [formGroup]="leaveForm" (ngSubmit)="submitForm()">
+        <mat-form-field>
+          <mat-label>Leave Type</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="sick">Sick Leave</mat-option>
+            <mat-option value="casual">Casual Leave</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Resuon</mat-label>
+          <textarea matInput formControlName="reason"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>From</mat-label>
+          <input matInput [matDatepicker]="from" formControlName="from" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="from"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #from></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>To</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="to" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button type="submit" class="m-auto bg-primary">Submit</button>
+    
+        <button style="float: right;" mat-raised-button routerLink="/profile" class="m-auto bg-secondary">Back</button>
+      </form>
+    </div>
+  </div>
+</div>

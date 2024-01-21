@@ -16,8 +16,8 @@
           </div>
 
           <div>
-            <mat-icon aria-hidden="true" class="text-info"  matBadge="8" matBadgeColor="accent" (click)="seeNotification()">add_alert</mat-icon>
-            <!-- <button class="btn btn-sm">Notification</button> -->
+            <mat-icon aria-hidden="true" class="text-info"  [matBadge]="notification" matBadgeColor="accent" (click)="seeNotification()">add_alert</mat-icon>
+         
           </div>
           <div>
             <mat-icon class="text-danger" (click)="logOut()"
