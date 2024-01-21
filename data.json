@@ -17,7 +17,7 @@
       "id": "tr",
       "name": "Tanjil",
       "department": "sales",
-      "designation": "manager",
+      "designation": "trainee",
       "gender": "male",
       "role": "sales",
       "isactive": true,
@@ -102,7 +102,7 @@
       "reason": "122",
       "from": "2024-01-21T05:09:00.746Z",
       "to": "2024-01-21T05:09:00.746Z",
-      "status": "pending",
+      "status": "accept",
       "id": 1
     },
     {
@@ -111,7 +111,7 @@
       "reason": "11254444",
       "from": "2016-01-01T18:00:00.000Z",
       "to": "2023-12-31T18:00:00.000Z",
-      "status": "pending",
+      "status": "accept",
       "id": 2
     },
     {
@@ -120,7 +120,7 @@
       "reason": "bari zabo",
       "from": "2024-01-21T18:00:00.000Z",
       "to": "2024-01-21T05:29:20.672Z",
-      "status": "pending",
+      "status": "reject",
       "id": 3
     },
     {
@@ -129,7 +129,7 @@
       "reason": "aaaaaaaaaaaa",
       "from": "2024-01-21T18:00:00.000Z",
       "to": "2024-01-07T18:00:00.000Z",
-      "status": "pending",
+      "status": "reject",
       "id": 4
     },
     {
@@ -138,7 +138,7 @@
       "reason": "Dont ask question it casual",
       "from": "2024-01-21T06:00:42.603Z",
       "to": "2024-01-21T06:00:42.603Z",
-      "status": "pending",
+      "status": "reject",
       "id": 5
     },
     {
@@ -158,6 +158,51 @@
       "to": null,
       "status": null,
       "id": 7
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "\\]'",
+      "from": "2024-01-21T08:31:15.429Z",
+      "to": "2024-01-21T08:31:15.429Z",
+      "status": "accept",
+      "id": 8
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "amnai",
+      "from": "2024-01-21T11:51:40.473Z",
+      "to": "2024-01-22T18:00:00.000Z",
+      "status": "pending",
+      "id": 9
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "afasdfa",
+      "from": "2024-01-21T11:53:56.444Z",
+      "to": "2024-01-21T11:53:56.444Z",
+      "status": "pending",
+      "id": 10
+    },
+    {
+      "name": "ar",
+      "type": "sick",
+      "reason": "afaf",
+      "from": "2024-01-21T11:54:29.496Z",
+      "to": "2024-01-21T11:54:29.496Z",
+      "status": "pending",
+      "id": 11
+    },
+    {
+      "name": null,
+      "type": "sick",
+      "reason": "afdadf",
+      "from": "2024-01-03T18:00:00.000Z",
+      "to": null,
+      "status": null,
+      "id": 12
     }
   ]
 }

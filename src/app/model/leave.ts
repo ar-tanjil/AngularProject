@@ -1,5 +1,5 @@
 export class Leave{
-    id?: string;
+    id?: number;
     name?: string;
     type?: string;
     reason?: string;

@@ -1,55 +1,109 @@
-<mat-card class="mt-2">
-  <mat-card-content class="d-flex flex-row">
-    <div class="fs-1 fw-bolder">Welcome {{ user.name | titlecase }}</div>
-    <div style="flex:auto"></div>
-    <div class="fs-4 fw-bold"> {{user.role | titlecase}} </div>
-  </mat-card-content>
-</mat-card>
-
-
-<div class="row gap-3 m-5">
-  <div class="col" style="height: 300px;">
-    <mat-card>
-      <mat-card-content class="customCard" style="height: 300px;">
-
-      </mat-card-content>
-    </mat-card>
+<div class="d-flex mt-5 mx-5 flex-row">
+  <div
+    class="fs-1 fw-bolder mat-elevation-z8"
+    style="color: #66b1cf; background-color: #555273"
+  >
+    Welcome {{ user.name | titlecase }}
   </div>
-  <div class="col" style="height: 300px;">
-    <mat-card>
-      <mat-card-content  class="customCard" style="height: 300px;">
-
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col" style="height: 300px;">
-    <mat-card>
-      <mat-card-content  class="customCard" style="height: 300px;">
-
-      </mat-card-content>
-    </mat-card>
+  <div style="flex: auto"></div>
+  <div
+    class="fs-3 fw-bold mat-elevation-z8 text-center"
+    style="background-color: #555273; color: #66b1cf"
+  >
+    {{ user.role | titlecase }}
   </div>
 </div>
 
 <div class="row gap-3 m-5">
-  <div class="col" style="height: 300px;">
-    <mat-card>
-      <mat-card-content  class="customCard" style="height: 300px;">
+  <div class="col" style="height: 400px">
+    <div class="row gap-2">
+      <div class="col-12">
+        <div class="row gap-2">
+          <div class="col" style="height: 200px">
+            <mat-card>
+              <mat-card-content
+                class="customCard mat-elevation-z8 rounded"
+                style="height: 200px; background-color: #55829c"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center h-75"  style="color:#e2eff1; font-size: large"
+                >
+                  <div>
+                    <p class="text-center" style="font-size: 25px">
+                      Total Employee
+                    </p>
 
-      </mat-card-content>
-    </mat-card>
+                    <p class="text-center fw-bold" style="font-size: 40px"><mat-icon>supervisor_account</mat-icon> {{ getAllEmploye().length }}</p>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col" style="height: 200px">
+            <mat-card>
+              <mat-card-content
+                class="customCard mat-elevation-z8 rounded"
+                style="height: 200px; background-color: #65799b"
+              >
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row gap-2">
+          <div class="col" style="height: 200px">
+            <mat-card>
+              <mat-card-content
+                class="customCard mat-elevation-z8 rounded"
+                style="height: 200px; background-color: #7a9eaf"
+              >
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col" style="height: 200px">
+            <mat-card>
+              <mat-card-content
+                class="customCard mat-elevation-z8 rounded"
+                style="height: 200px; background-color: #52616b"
+              >
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col" style="height: 300px;">
-    <mat-card>
-      <mat-card-content  class="customCard" style="height: 300px;">
 
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col" style="height: 300px;">
+  <div class="col" style="height: 400px">
     <mat-card>
-      <mat-card-content  class="customCard" style="height: 300px;">
-
+      <mat-card-content
+        class="customCard mat-elevation-z8 rounded"
+        style="height: 400px; background-color: #555273"
+      >
+        <img
+          src="../assets/employee.jpg"
+          class="rounded-circle mx-auto d-block mt-4"
+          height="100px"
+          width="100px"
+          alt="img"
+        />
+        <h1
+          class="text-center fw-bolder"
+          style="color:#e2eff1;; font-size: large"
+        >
+          {{ user.designation | uppercase }}
+        </h1>
+        <div style="text-align: center">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FDhaka&showTabs=0&showCalendars=0&showPrint=0&showNav=0&showTitle=0&showTz=0&src=ZW4uYmQjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%230B8043"
+            style="border: solid 1px #777"
+            width="70%"
+            height="200px"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>

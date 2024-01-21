@@ -1,68 +1,95 @@
-<div class="p-1">
-  <button mat-raised-button color="primary" class="my-3 mx-2"  [matMenuTriggerFor]="sort">Sort <span class="fw-bolder">></span>
-    {{sortValue}}</button>
-  <mat-menu #sort="matMenu">
-    <button mat-menu-item (click)="toggleMenu('All')">All</button>
-    <button mat-menu-item (click)="toggleMenu('Administration')">Administration</button>
-    <button mat-menu-item (click)="toggleMenu('Account')">Account</button>
-    <button mat-menu-item (click)="toggleMenu('Sales')">Sales</button>
-    <button mat-menu-item (click)="toggleMenu('Purchase')">Purchase</button>
-  </mat-menu>
-  <button *ngIf="admin" routerLink="/form/add" mat-raised-button color="primary" class="my-3" style="float: right; margin-right: 15px;">Add New Employee</button>
- 
- 
-  <table class="table table-hover mat-elevation-z8 w-100">
-    <thead class="thead-dark">
-      <tr class="text-center">
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Department</th>
-        <th scope="col">Designation</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Role</th>
-        <th scope="col">Active</th>
-        <th scope="col" *ngIf="admin"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let emp of getEmployee() |filter: sortValue.toLowerCase()| slice : lowValue : highValue ; let i = index" class="text-center">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ emp.name | titlecase }}</td>
-        <td>{{ emp.department | titlecase }}</td>
-        <td>{{ emp.designation | titlecase }}</td>
-        <td>{{ emp.gender | titlecase }}</td>
-        <td>{{ emp.role | titlecase }}</td>
-        <td>
-          <mat-icon *ngIf="emp.isactive" class="text-primary"
-            >check_circle_outline</mat-icon
-          >
-          <mat-icon *ngIf="!emp.isactive" class="text-danger text-center"
-            >highlight_off</mat-icon
-          >
-        </td>
 
-        <td [matMenuTriggerFor]="menu1" *ngIf="admin">
-          <a>
-            <mat-icon style="cursor: pointer;" class="text-info">reorder</mat-icon>
-            <mat-menu #menu1="matMenu">
-              <button mat-menu-item (click)="updateuser(emp.id)">
-                <mat-icon>info</mat-icon>Update
-              </button>
-              <button mat-menu-item [routerLink]="['/profile',  emp.id]">
-                <mat-icon>edit</mat-icon>Details
-              </button>
-            </mat-menu>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <mat-paginator
-    [length]="getEmployee().length"
-    [pageSize]="10"
-    [pageSizeOptions]="[1, 10, 25, 100]"
-    (page)="getPaginatorData($event)"
-    aria-label="Select page"
-  >
-  </mat-paginator>
-</div>
+  <div class="p-1" >
+    <button
+      mat-raised-button
+      style="background-color: #504d78; color: #b6d5e1;"
+      class="my-3 mx-2"
+      [matMenuTriggerFor]="sort"
+    >
+      Sort <span class="fw-bolder" >></span> {{ sortValue }}
+    </button>
+    <mat-menu #sort="matMenu">
+      <button mat-menu-item (click)="toggleMenu('All')">All</button>
+      <button mat-menu-item (click)="toggleMenu('Administration')">
+        Administration
+      </button>
+      <button mat-menu-item (click)="toggleMenu('Account')">Account</button>
+      <button mat-menu-item (click)="toggleMenu('Sales')">Sales</button>
+      <button mat-menu-item (click)="toggleMenu('Purchase')">Purchase</button>
+    </mat-menu>
+    <button
+      *ngIf="admin"
+      routerLink="/form/add"
+      mat-raised-button
+      class="my-3"
+      style="float: right; margin-right: 15px; background-color: #504d78; color: #b6d5e1;"
+    >
+      Add New Employee
+    </button>
+
+    <table class="table table-hover mat-elevation-z8 w-100" >
+      <thead class="thead-dark">
+        <tr class="text-center">
+          <th scope="col" style="color: #504d78;" >#</th>
+          <th scope="col" style="color: #504d78;" >Name</th>
+          <th scope="col" style="color: #504d78;">Department</th>
+          <th scope="col" style="color: #504d78;">Designation</th>
+          <th scope="col" style="color: #504d78;">Gender</th>
+          <th scope="col" style="color: #504d78;">Role</th>
+          <th scope="col" style="color: #504d78;">Active</th>
+          <th scope="col" style="color: #504d78;" *ngIf="admin"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let emp of getEmployee()
+              | filter : sortValue.toLowerCase()
+              | slice : lowValue : highValue;
+            let i = index
+          "
+          class="text-center"
+        >
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ emp.name | titlecase }}</td>
+          <td>{{ emp.department | titlecase }}</td>
+          <td>{{ emp.designation | titlecase }}</td>
+          <td>{{ emp.gender | titlecase }}</td>
+          <td>{{ emp.role | titlecase }}</td>
+          <td>
+            <mat-icon *ngIf="emp.isactive" class="text-primary"
+              >check_circle_outline</mat-icon
+            >
+            <mat-icon *ngIf="!emp.isactive" class="text-danger text-center"
+              >highlight_off</mat-icon
+            >
+          </td>
+
+          <td [matMenuTriggerFor]="menu1" *ngIf="admin" >
+            <a>
+              <mat-icon style="cursor: pointer" style="color: #504d78;"
+                >reorder</mat-icon
+              >
+              <mat-menu #menu1="matMenu">
+                <button mat-menu-item (click)="updateuser(emp.id)">
+                  <mat-icon style="color: #504d78;">create</mat-icon>Update
+                </button>
+                <button mat-menu-item [routerLink]="['/profile', emp.id]">
+                  <mat-icon style="color: #504d78;">info</mat-icon>Details
+                </button>
+              </mat-menu>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator
+      [length]="getEmployee().length"
+      [pageSize]="10"
+      [pageSizeOptions]="[1, 10, 25, 100]"
+      (page)="getPaginatorData($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+

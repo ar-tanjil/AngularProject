@@ -12,7 +12,7 @@ import { LeaveService } from '../service/leaveService';
   templateUrl: './notification-popup.component.html',
   styleUrls: ['./notification-popup.component.scss']
 })
-export class NotificationPopupComponent implements OnInit {
+export class NotificationPopupComponent implements DoCheck, OnInit {
 
   applicationLog: Leave[] = [];
   pendigLeave: Leave[] = [];
@@ -23,9 +23,14 @@ export class NotificationPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.data.id != '' && this.data.id != null) {
-      this.loaduserdata(this.data.id);
-    }
+    if (this.data.name != '' && this.data.id != null) {
+      this.loaduserdata(this.data.name ?? "");
+    }                                            
+  }
+
+
+  ngDoCheck(): void {
+   
     this.pendigLeave = this.getPendingLeave();
   }
 
@@ -55,6 +60,19 @@ export class NotificationPopupComponent implements OnInit {
     this.service.getEmployeeObservable(code).subscribe(emp => {
       this.editdata = emp ?? new Employee();
     })
+  }
+
+  accept(id: number | undefined){
+    let leave: Leave = this.leaveService.getLeaveById(id ?? -1) ?? new Leave();
+    leave.status = "accept";
+    this.leaveService.saveLeaveRequest(leave);
+  }
+
+
+  reject(id: number | undefined){
+    let leave: Leave = this.leaveService.getLeaveById(id ?? -1) ?? new Leave();
+    leave.status = "reject";
+    this.leaveService.saveLeaveRequest(leave);
   }
 
 }

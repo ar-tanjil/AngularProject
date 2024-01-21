@@ -17,10 +17,11 @@ export class ProfileComponent implements DoCheck {
   isAdmin: boolean = false;
   currentAdmin: boolean = false;
   aplicationLog: Leave[] = [];
+  appId!: string;
 
 
   constructor(public model: Model, activeRoute: ActivatedRoute,
-    public router: Router, private builder: FormBuilder, private toast: ToastrService, private leaveService: LeaveService) {
+    public router: Router, private builder: FormBuilder, private toast: ToastrService, public leaveService: LeaveService) {
     this.isAdmin = this.model.isAdmin();
 
 
@@ -36,6 +37,7 @@ export class ProfileComponent implements DoCheck {
       }
 
       if (id != null) {
+        this.appId = id;
         model.getEmployeeObservable(id).subscribe(p => {
           Object.assign(this.employee, p || new Employee());
           this.registerform.patchValue(this.employee);
@@ -46,8 +48,7 @@ export class ProfileComponent implements DoCheck {
 
 
   ngDoCheck(): void {
-    let adminId = sessionStorage.getItem("username")
-    this.leaveService.getUserLeave(adminId ?? "").subscribe(leave => {
+    this.leaveService.getUserLeave(this.appId ?? "").subscribe(leave => {
       Object.assign(this.aplicationLog, leave);
     })
   }

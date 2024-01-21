@@ -22,6 +22,9 @@ export class DisplayComponent {
   }
 
 
+  getAllEmploye(){
+    return this.model.getAllEmployee();
+  }
 
 
 

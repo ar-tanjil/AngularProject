@@ -7,7 +7,7 @@ import { Observable, ReplaySubject } from "rxjs";
 export class LeaveService {
     private leave: Leave[];
     private replaySubject: ReplaySubject<Leave[]>;
-    private locator = (l: Leave, id?: string) => l.id == id;
+    private locator = (l: Leave, id?: number) => l.id == id;
 
 
     constructor(private service: DataSource) {
@@ -24,7 +24,7 @@ export class LeaveService {
         return this.leave;
     }
 
-    getLeaveById(id: string): Leave | undefined {
+    getLeaveById(id: number): Leave | undefined {
         return this.leave.find(p => this.locator(p, id))
     }
 
@@ -33,18 +33,18 @@ export class LeaveService {
             this.service.saveLeaveRequest(leave)
                 .subscribe(p => this.leave.push(p));
         } else {
-            this.service.updateData(leave).subscribe(p => {
+            this.service.updateLeaveRequest(leave).subscribe(p => {
                 let index = this.leave
                     .findIndex(item => this.locator(item, p.id));
                 this.leave.splice(index, 1, p);
 
             });
         }
-        return this.getLeaveObservable(leave.id ?? "");
+        return this.getLeaveObservable(leave.id ?? -1);
     }
 
 
-    getLeaveObservable(id: string): Observable<Leave | undefined> {
+    getLeaveObservable(id: number): Observable<Leave | undefined> {
         let subject = new ReplaySubject<Leave | undefined>(1);
         this.replaySubject.subscribe(emp => {
             subject.next(emp.find(l => this.locator(l, id)));
@@ -53,8 +53,8 @@ export class LeaveService {
         return subject;
     }
 
-    deleteLeaveRequest(id: string) {
-        this.service.deleteData(id).subscribe(() => {
+    deleteLeaveRequest(id: number) {
+        this.service.deleteLeaveRequest(id).subscribe(() => {
             let index = this.leave.findIndex(l => this.locator(l, id));
             if (index > -1) {
                 this.leave.splice(index, 1);

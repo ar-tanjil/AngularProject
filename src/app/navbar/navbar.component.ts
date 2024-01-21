@@ -58,7 +58,7 @@ export class NavbarComponent implements DoCheck {
     const popup = this.dialog.open(NotificationPopupComponent, {
       enterAnimationDuration: enteranimation,
       exitAnimationDuration: exitanimation,
-      width: '30%',
+      width: '50%',
       data: {
         id: code
       }

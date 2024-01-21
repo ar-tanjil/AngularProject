@@ -23,22 +23,21 @@
   li a {
     display: block;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #555273;
     padding: 14px 16px;
     text-decoration: none;
     font-weight: bolder;
   }
 
   li a:hover {
-    background-color: #f2f6dd;
-    
-  
+    background-color: #b6d5e1;
+    color: #555273;  
   }
 
-  .active {
-    background-color: #eaf1c4;
+  li .active {
+    background-color: #555273;
     size: 1.3rem;
-    color: rgb(0, 0, 0);
+    color: #e2eff1;
     font-weight: bolder;
   }
 

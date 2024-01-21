@@ -1,23 +1,29 @@
-<table class="table table-hover">
+<h1 class="text-center fw-bolder">Leave Request</h1>
+<table class="table table-striped">
   <thead>
-    <tr>
-      <td>Name</td>
-      <td>Date</td>
-      <td>Type</td>
-      <td></td>
+    <tr class="text-center">
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Type</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let leave of pendigLeave">
+    <tr *ngFor="let leave of pendigLeave" class="text-center">
       <td>{{ getName(leave.name ?? "") }}</td>
       <td>
-        {{ leave.from | date : "dd-mm" }} to {{ leave.to | date : "dd-mm" }}
+        {{ leave.from | date : "mediumDate" }} to {{ leave.to | date : "mediumDate" }}
       </td>
       <td>
         {{leave.type | titlecase}}
       </td>
       <td>
-        <button>Accept</button>
+        <button mat-icon-button class="icon2 mx-1" (click)="accept(leave.id)">
+          <mat-icon class="text-white">check_circle</mat-icon>
+        </button>
+        <button mat-icon-button (click)="reject(leave.id)" class="icon1">
+          <mat-icon class="text-white ">clear</mat-icon>
+        </button>
       </td>
     </tr>
   </tbody>

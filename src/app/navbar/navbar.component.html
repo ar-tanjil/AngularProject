@@ -1,22 +1,21 @@
-<mat-card>
-  <mat-card-content style="margin: 0; padding: 8px">
-    <mat-card>
+
+    <mat-card style="margin: 0; padding: 8px">
       <mat-card-content
-        style="padding: 0; background-color:#eaf1c4"
+        style="padding: 0; background-color:#b6d5e1"
       >
         <div style="display: flex; flex-direction: row; gap: 15px">
           <div>
-            <mat-icon (click)="toggle()" class="text-info"
+            <mat-icon (click)="toggle()" style="color: #555273;"
               >vertical_split</mat-icon
             >
           </div>
           <div style="flex:auto"></div>
           <div style="display: flex; align-items: center;">
-            <h4 style="margin: 0; font-weight: bold;"> {{date | date : 'EE, MMMM d-yyyy'}} </h4>
+            <h4 style="margin: 0; font-weight: bold; color: #555273;"> {{date | date : 'EE, MMMM d-yyyy'}} </h4>
           </div>
 
           <div>
-            <mat-icon aria-hidden="true" class="text-info"  [matBadge]="notification" matBadgeColor="accent" (click)="seeNotification()">add_alert</mat-icon>
+            <mat-icon aria-hidden="true" style="color: #555273;"  [matBadge]="notification" matBadgeColor="warn" (click)="seeNotification()">notifications</mat-icon>
          
           </div>
           <div>
@@ -27,5 +26,4 @@
         </div>
       </mat-card-content>
     </mat-card>
-  </mat-card-content>
-</mat-card>
+ 

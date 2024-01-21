@@ -65,10 +65,10 @@ export class DataSource {
     }
 
     updateLeaveRequest(leave: Leave): Observable<Leave> {
-        return this.sendRequest<Leave>("GET", `${this.leaveUrl}/${leave.id}`, leave);
+        return this.sendRequest<Leave>("PUT", `${this.leaveUrl}/${leave.id}`, leave);
     }
 
-    deleteLeaveRequest(id: string): Observable<Leave> {
+    deleteLeaveRequest(id: number): Observable<Leave> {
         return this.sendRequest<Leave>("DELETE", `${this.leaveUrl}/${id}`);
     }
 
