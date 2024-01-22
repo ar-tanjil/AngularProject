@@ -1,30 +1,37 @@
-<h1 class="text-center fw-bolder">Leave Request</h1>
-<table class="table table-striped">
-  <thead>
-    <tr class="text-center">
-      <th scope="col">Name</th>
-      <th scope="col">Date</th>
-      <th scope="col">Type</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let leave of pendigLeave" class="text-center">
-      <td>{{ getName(leave.name ?? "") }}</td>
-      <td>
-        {{ leave.from | date : "mediumDate" }} to {{ leave.to | date : "mediumDate" }}
-      </td>
-      <td>
-        {{leave.type | titlecase}}
-      </td>
-      <td>
-        <button mat-icon-button class="icon2 mx-1" (click)="accept(leave.id)">
-          <mat-icon class="text-white">check_circle</mat-icon>
-        </button>
-        <button mat-icon-button (click)="reject(leave.id)" class="icon1">
-          <mat-icon class="text-white ">clear</mat-icon>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="!isAdmin()">
+  <h1 class="text-center">Notifications</h1>
+</div>
+
+<div *ngIf="isAdmin()">
+  <h1 class="text-center fw-bolder">Leave Request</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Type</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leave of pendigLeave" class="text-center">
+        <td>{{ getName(leave.name ?? "") }}</td>
+        <td>
+          {{ leave.from | date : "mediumDate" }} to
+          {{ leave.to | date : "mediumDate" }}
+        </td>
+        <td>
+          {{ leave.type | titlecase }}
+        </td>
+        <td>
+          <button mat-icon-button class="icon2 mx-1" (click)="accept(leave.id)">
+            <mat-icon class="text-white">check_circle</mat-icon>
+          </button>
+          <button mat-icon-button (click)="reject(leave.id)" class="icon1">
+            <mat-icon class="text-white">clear</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

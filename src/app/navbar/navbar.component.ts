@@ -30,7 +30,10 @@ export class NavbarComponent implements DoCheck {
 
 
   ngDoCheck(): void {
+    if(this.isAdmin){
       this.notification = this.leaveService.getAllPendigLeave().length;
+    }
+      
   }
 
 

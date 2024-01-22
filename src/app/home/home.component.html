@@ -1,4 +1,21 @@
 
+<div class="d-flex mt-5 mx-5 flex-row">
+  <div
+    class=" fw-bolder mat-elevation-z8"
+    style="color: #66b1cf; background-color: #555273; font-size: 50px;"
+  >
+    Employee List
+  </div>
+  <div style="flex: auto"></div>
+  <div
+    class="fs-3 fw-bold mat-elevation-z8 text-center"
+    style="background-color: #555273; color: #66b1cf"
+  >
+    
+  </div>
+</div>
+  
+  
   <div class="p-1" >
     <button
       mat-raised-button
@@ -66,8 +83,8 @@
           </td>
 
           <td [matMenuTriggerFor]="menu1" *ngIf="admin" >
-            <a>
-              <mat-icon style="cursor: pointer ; color: #504d78;"
+            <a mat-raised-button style="background-color: #b6d5e1;">
+              <mat-icon  style="cursor: pointer ; color: #504d78; padding: 0; margin: 0;"
                 >reorder</mat-icon
               >
               <mat-menu #menu1="matMenu">

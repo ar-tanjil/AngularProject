@@ -19,6 +19,9 @@ import { DisplayComponent } from './display/display.component';
 import { FilterPipe } from './customPipe/catagoryPipe';
 import { NotificationPopupComponent } from './notification-popup/notification-popup.component';
 import { LeaveRequstComponent } from './leave-requst/leave-requst.component';
+import { PayrollComponent } from './payroll/payroll.component';
+import { SalaryFormComponent } from './salary-form/salary-form.component';
+import { PayslipComponent } from './payslip/payslip.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { LeaveRequstComponent } from './leave-requst/leave-requst.component';
     DisplayComponent,
     FilterPipe,
     NotificationPopupComponent,
-    LeaveRequstComponent
+    LeaveRequstComponent,
+    PayrollComponent,
+    SalaryFormComponent,
+    PayslipComponent
   ],
   imports: [
     BrowserModule,

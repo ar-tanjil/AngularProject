@@ -3,15 +3,17 @@
     <div class="card">
       <div>
         <img
-          src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-background-material-design-for-lorem-ipsum-logo-png-image_3624650.jpg"
+          src="../assets/logo.webp"
           alt=""
-          width="100px"
+          width="110px"
+          style="display: block; margin: auto;"
         />
       </div>
       <ul >
         <li><a routerLink="/display" [class.active]="dahsboard"><mat-icon>dashboard</mat-icon> Dashboard</a></li>
         <li><a routerLink="/home" [class.active]="employee"><mat-icon class="text-center">group</mat-icon> Employee</a></li>
-        <li><a [routerLink]="['/profile']" [class.active]="profile" ><mat-icon>account_box</mat-icon> Profile &nbsp;&nbsp;&nbsp;</a></li>
+        <li><a [routerLink]="['/profile']" [class.active]="profile" ><mat-icon>person</mat-icon> Profile &nbsp;&nbsp;&nbsp;</a></li>
+        <li *ngIf="isAdmin()"><a [routerLink]="['/payroll']" [class.active]="payroll" >	<mat-icon> attach_money</mat-icon> Payroll &nbsp;&nbsp;&nbsp;</a></li>
       </ul>
     </div>
   </mat-sidenav>

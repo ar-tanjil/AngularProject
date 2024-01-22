@@ -6,26 +6,26 @@ import { Employee } from '../model/employee.model';
 import { ToastrService } from 'ngx-toastr';
 import { Leave } from '../model/leave';
 import { LeaveService } from '../service/leaveService';
+import { SalaryService } from '../service/salary.service';
+import { Salary } from '../model/salary.model';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements DoCheck {
+export class ProfileComponent {
   employee: Employee = new Employee();
   isAdmin: boolean = false;
   currentAdmin: boolean = false;
   aplicationLog: Leave[] = [];
   appId!: string;
-
+  salary: Salary = new Salary();
 
   constructor(public model: Model, activeRoute: ActivatedRoute,
-    public router: Router, private builder: FormBuilder, private toast: ToastrService, public leaveService: LeaveService) {
+    public router: Router, private builder: FormBuilder, private toast: ToastrService, public leaveService: LeaveService,
+    private salService: SalaryService) {
     this.isAdmin = this.model.isAdmin();
-
-
-
     activeRoute.params.subscribe(params => {
       let id = params["id"];
       let adminId = sessionStorage.getItem("username");
@@ -35,45 +35,20 @@ export class ProfileComponent implements DoCheck {
         this.currentAdmin = true;
         id = adminId;
       }
-
       if (id != null) {
         this.appId = id;
-
+        this.model.getEmployeeObservable(this.appId).subscribe(p => {
+          Object.assign(this.employee, p || new Employee());
+          this.salService.getSalaryObservable(this.appId).subscribe(sal => {
+            Object.assign(this.salary, sal);
+            this.leaveService.getUserLeave(this.appId ?? "").subscribe(leave => {
+              Object.assign(this.aplicationLog, leave);
+            })
+          })
+        });
       }
     })
   }
-
-
-  ngDoCheck(): void {
-
-
-    this.model.getEmployeeObservable(this.appId).subscribe(p => {
-      Object.assign(this.employee, p || new Employee());
-    });
-
-    this.leaveService.getUserLeave(this.appId ?? "").subscribe(leave => {
-      Object.assign(this.aplicationLog, leave);
-    })
-  }
-
-  loadUser() {
-
-  }
-
-
-  // registerform = this.builder.group({
-  //   id: this.builder.control('', Validators.required),
-  //   name: this.builder.control('', Validators.required),
-  //   password: this.builder.control('', Validators.required),
-  //   email: this.builder.control('', Validators.email),
-  //   gender: this.builder.control('male'),
-  //   designation: this.builder.control(""),
-  //   department: this.builder.control(""),
-  //   role: this.builder.control(''),
-  //   isactive: this.builder.control(false),
-  //   salary: this.builder.control(0),
-  //   joinDate: this.builder.control(new Date())
-  // });
 
 
 

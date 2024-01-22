@@ -6,6 +6,7 @@ import { Role } from "../model/role.model";
 import { Leave } from "../model/leave";
 import { Department } from "../model/department.model";
 import { Designation } from "../model/desigantion.model";
+import { Salary } from "../model/salary.model";
 
 export const REST_URL = new InjectionToken("rest_url");
 
@@ -16,6 +17,7 @@ export class DataSource {
     departUrl = `http://${location.hostname}:3500/department`
     desigUrl = `http://${location.hostname}:3500/disignation`
     leaveUrl = `http://${location.hostname}:3500/leaveRequest`
+    salaryUrl= `http://${location.hostname}:3500/salary`
 
 
     constructor(private http: HttpClient,
@@ -71,6 +73,23 @@ export class DataSource {
     deleteLeaveRequest(id: number): Observable<Leave> {
         return this.sendRequest<Leave>("DELETE", `${this.leaveUrl}/${id}`);
     }
+// 
+
+    saveSalary(salary: Salary): Observable<Salary> {
+        return this.sendRequest<Salary>("POST", this.salaryUrl, salary);
+    }
+
+    getSalary(): Observable<Salary[]> {
+        return this.sendRequest<Salary[]>("GET", this.salaryUrl);
+    }
+
+    updateSalary(salary: Salary): Observable<Salary> {
+        return this.sendRequest<Salary>("PUT", `${this.salaryUrl}/${salary.id}`, salary);
+    }
+
+    deleteSalary(id: string): Observable<Salary> {
+        return this.sendRequest<Salary>("DELETE", `${this.salaryUrl}/${id}`);
+    }
 
 
     private sendRequest<T>(verb: string, url: string,
@@ -79,4 +98,7 @@ export class DataSource {
             body: body
         });
     }
+
+
+
 }

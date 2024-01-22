@@ -16,9 +16,11 @@ export class NotificationPopupComponent implements DoCheck, OnInit {
 
   applicationLog: Leave[] = [];
   pendigLeave: Leave[] = [];
+  
   constructor(private builder: FormBuilder, private service: Model, private toastr: ToastrService,
     private dialogref: MatDialogRef<NotificationPopupComponent>, @Inject(MAT_DIALOG_DATA) public data: Leave,
     private leaveService: LeaveService) {
+
 
   }
 
@@ -28,10 +30,14 @@ export class NotificationPopupComponent implements DoCheck, OnInit {
     }                                            
   }
 
+  isAdmin(){
+    return sessionStorage.getItem("role") == "admin";
+  }
 
   ngDoCheck(): void {
-   
+    if(this.isAdmin()){
     this.pendigLeave = this.getPendingLeave();
+    }
   }
 
 

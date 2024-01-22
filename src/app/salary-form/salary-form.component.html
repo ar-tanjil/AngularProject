@@ -1,0 +1,107 @@
+
+    <div class=" m-2 d-flex align-items-center justify-content-center h-75" style="background-color: #e2eff1" >
+        <div class="card m-2">
+            <div class="card-body text-center" style="color: #555273; background-color: #b6d5e1;"> 
+                <h1 class="card-title fw-bolder" >Salary Form</h1>
+                    <form [formGroup]="slaryForm" (ngSubmit)="submitForm()">
+                      <mat-form-field>
+                        <mat-label>Select Employee</mat-label>
+                        <mat-select name="id" formControlName="id">
+                          <mat-option
+                            *ngFor="let user of getUserId()"
+                            [value]="user.id"
+                          >
+                            {{ user.name }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Basic</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Basic"
+                                      formControlName="basic"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                  <mat-form-field class="w-100">
+                                    <mat-label>Conveyance</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Conveyance"
+                                      formControlName="conveyance"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                  <mat-form-field class="w-100">
+                                    <mat-label>Medical Allowence</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Medical Allowence"
+                                      formControlName="medicalAllowance"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                  
+                                  
+                            </div>
+                            <div class="col">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Provident Fund</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Provident Fund"
+                                      formControlName="providentFund"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                <mat-form-field class="w-100">
+                                    <mat-label>Leave Deduction</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Leave Deduction"
+                                      formControlName="leaveDeduction"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                  <mat-form-field class="w-100">
+                                    <mat-label>Tax</mat-label>
+                                    <input
+                                      matInput
+                                      placeholder="Tax"
+                                      formControlName="tax"
+                                      type="number"
+                                      required
+                                    />
+                                  </mat-form-field>
+                                  
+                            </div>
+                        </div>
+                       
+                            <div class="text-center">
+                              <button mat-raised-button class="mx-5" color="primary" type="submit">Submit</button>
+                              <button mat-raised-button class="mx-5 bg-secondry-subtle" routerLink="/payroll">Back</button>
+                            </div>
+                            
+                    </form>
+            
+            
+            </div>
+
+
+
+
+
+        </div>
+    
+    
+    
+    
+    </div>

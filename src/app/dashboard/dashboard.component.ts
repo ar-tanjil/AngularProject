@@ -16,7 +16,9 @@ export class DashboardComponent implements DoCheck {
   }
 
 
-
+  isAdmin(){
+    return sessionStorage.getItem("role") == "admin";
+  }
 
   id: string;
   events: string[] = [];
@@ -26,6 +28,7 @@ export class DashboardComponent implements DoCheck {
   dahsboard: boolean = true;
   employee: boolean = false;
   profile: boolean = false;
+  payroll: boolean = false;
 
   toggle() {
     let url = this.route.url;
@@ -33,14 +36,23 @@ export class DashboardComponent implements DoCheck {
       this.dahsboard = true;
       this.employee = false;
       this.profile = false;
+      this.payroll = false;
     } else if (url.startsWith("/home")) {
       this.employee = true;
       this.dahsboard = false;
       this.profile = false;
+      this.payroll = false;
     } else if (url.startsWith("/profile")) {
       this.profile = true;
       this.dahsboard = false;
       this.employee = false;
+      this.payroll = false;
+    } else if(url.startsWith("/payroll") || url.startsWith("/payslip")){
+      this.payroll = true;
+      this.profile = false;
+      this.dahsboard = false;
+      this.employee = false;
+      
     }
   }
 

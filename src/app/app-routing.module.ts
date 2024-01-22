@@ -8,6 +8,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { DisplayComponent } from './display/display.component';
 import { LeadingComment } from '@angular/compiler';
 import { LeaveRequstComponent } from './leave-requst/leave-requst.component';
+import { PayrollComponent } from './payroll/payroll.component';
+import { SalaryFormComponent } from './salary-form/salary-form.component';
+import { PayslipComponent } from './payslip/payslip.component';
 
 const routes: Routes = [
   { path: "", component: DisplayComponent, canActivate: [AuthGuard] },
@@ -17,6 +20,9 @@ const routes: Routes = [
   { path: "form/:mode/:id", component: RegisterComponent, canActivate: [AuthGuard] },
   { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: "payroll", component: PayrollComponent, canActivate: [AuthGuard] },
+  { path: "salary/:id", component: SalaryFormComponent, canActivate: [AuthGuard] },
+  { path: "payslip/:id", component: PayslipComponent, canActivate: [AuthGuard] },
   { path: "leave", component: LeaveRequstComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
 ];

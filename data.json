@@ -64,6 +64,110 @@
       "salary": 50000,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "mahbub@gmail.com"
+    },
+    {
+      "id": "ruma",
+      "name": "Ruma Aktar",
+      "department": "account",
+      "designation": "trainee",
+      "gender": "female",
+      "role": "accountent",
+      "isactive": true,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "ruma@gmail.com"
+    },
+    {
+      "id": "imran",
+      "name": "Imarn Hosen",
+      "department": "sales",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "sales",
+      "isactive": false,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "imran@gmail.com"
+    },
+    {
+      "id": "hanee",
+      "name": "Umme Hanee",
+      "department": "purchase",
+      "designation": "trainee",
+      "gender": "female",
+      "role": "purchase",
+      "isactive": true,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "hanee@gmail.com"
+    },
+    {
+      "id": "shovo",
+      "name": "Mehdi Hasan Shovo",
+      "department": "administration",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "shovo@gmail.com"
+    },
+    {
+      "id": "abeer1",
+      "name": "Abedur Raman",
+      "department": "account",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "accountent",
+      "isactive": false,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "abeer1@gmail.com"
+    },
+    {
+      "id": "shorif",
+      "name": "Shorif Hosen",
+      "department": "sales",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "sales",
+      "isactive": false,
+      "password": "123",
+      "salary": 47000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "shorif@gmail.com"
+    },
+    {
+      "id": "salman",
+      "name": "Salman Hosen",
+      "department": "purchase",
+      "designation": "trainee",
+      "gender": "male",
+      "role": "purchase",
+      "isactive": true,
+      "password": "123",
+      "salary": 27200,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "salman@gmail.com"
+    },
+    {
+      "id": "elma",
+      "name": "Elma",
+      "department": "purchase",
+      "designation": "trainee",
+      "gender": "female",
+      "role": "purchase",
+      "isactive": true,
+      "password": "123",
+      "salary": 30000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "elma@gmail.com"
     }
   ],
   "role": [
@@ -229,6 +333,66 @@
       "to": "2024-01-22T06:50:55.394Z",
       "status": "pending",
       "id": 13
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "gergt3w",
+      "from": "2024-01-22T11:34:36.933Z",
+      "to": "2024-01-22T11:34:36.933Z",
+      "status": "reject",
+      "id": 14
+    },
+    {
+      "name": "tr",
+      "type": "sick",
+      "reason": "I was sick",
+      "from": "2024-01-15T18:00:00.000Z",
+      "to": "2024-01-15T18:00:00.000Z",
+      "status": "reject",
+      "id": 15
+    },
+    {
+      "name": "tr",
+      "type": "casual",
+      "reason": "hayre liv",
+      "from": "2024-01-22T18:09:21.224Z",
+      "to": "2024-01-22T18:09:21.224Z",
+      "status": "pending",
+      "id": 16
+    },
+    {
+      "name": null,
+      "type": null,
+      "reason": null,
+      "from": null,
+      "to": null,
+      "status": null,
+      "id": 17
+    }
+  ],
+  "salary": [
+    {
+      "id": "shorif",
+      "currentMonth": "2024-01-22T16:31:01.038Z",
+      "basic": 50000,
+      "conveyance": 5000,
+      "medicalAllowance": 2000,
+      "providentFund": 5000,
+      "leaveDeduction": 1000,
+      "tax": 4000,
+      "status": "due"
+    },
+    {
+      "id": "salman",
+      "currentMonth": "2024-01-22T18:21:18.656Z",
+      "basic": 30000,
+      "conveyance": 500,
+      "medicalAllowance": 3000,
+      "providentFund": 5000,
+      "leaveDeduction": 1000,
+      "tax": 300,
+      "status": "due"
     }
   ]
 }

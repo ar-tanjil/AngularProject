@@ -16,8 +16,7 @@ export class RegisterComponent {
   editing: boolean = false;
   isLoggedIn: boolean = false;
   isAdmin: boolean = false;
-  designationList: any;
-  departmentList: any;
+ 
   userNameList: string[];
   userInput: boolean = false;
   firstId: string = "";
@@ -26,8 +25,6 @@ export class RegisterComponent {
     public router: Router, private builder: FormBuilder, public toaster: ToastrService) {
     this.isLoggedIn = this.model.isloggedin();
     this.isAdmin = this.model.isAdmin();
-    this.departmentList = this.model.getDepartmentList();
-    this.designationList = this.model.getDesignationLis();
     this.userNameList = this.model.getUserNameList();
     activeRoute.params.subscribe(params => {
       this.editing = params["mode"] == "edit";
@@ -58,6 +55,15 @@ export class RegisterComponent {
     joinDate: this.builder.control(new Date())
   });
 
+
+
+  designationList(){
+    return this.model.getDesignationLis();
+  }
+
+  departmentList(){
+    return this.model.getDepartmentList();
+  }
 
 
   private findUser(id: string) {

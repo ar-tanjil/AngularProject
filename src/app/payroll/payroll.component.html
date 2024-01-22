@@ -1,0 +1,72 @@
+<div class="d-flex mt-5 mx-5 flex-row">
+    <div
+      class=" fw-bolder mat-elevation-z8"
+      style="color: #66b1cf; background-color: #555273; font-size: 50px;"
+    >
+     Payroll
+    </div>
+    <div style="flex: auto"></div>
+    <div
+      class="fs-3 fw-bold mat-elevation-z8 text-center"
+      style="background-color: #555273; color: #66b1cf"
+    >
+      
+    </div>
+  </div>
+
+  <button
+  routerLink="/salary/1"
+  mat-raised-button
+  class="my-3"
+  style="float: right; margin-right: 15px; background-color: #504d78; color: #b6d5e1;"
+>
+  Add Salary
+</button>
+
+  <div class="mx-4 mt-5">
+  <table class="table table-hover mat-elevation-z8 w-100 " >
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th scope="col" style="color: #504d78;" >Employee</th>
+        <th scope="col" style="color: #504d78;" >Id</th>
+        <th scope="col" style="color: #504d78;">Designation</th>
+        <th scope="col" style="color: #504d78;">Join Date</th>
+        <th scope="col" style="color: #504d78;">Total Salary</th>
+        <th scope="col" style="color: #504d78;">Payslip</th>
+      
+        <!-- <th scope="col" style="color: #504d78;" *ngIf="admin"></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="text-center"
+        *ngFor="let employee of getAllEmployee()"
+      >
+        <th> {{employee.name | titlecase}} </th>
+        <td> @{{employee.id}} </td>
+        <td> {{employee.designation | titlecase}} </td>
+        <td> {{employee.joinDate | date : "mediumDate"}} </td>
+        <td> {{employee.salary}} </td>
+        
+        <td><button class="btn btn-sm" style="color: #504d78; background-color: #b6d5e1;" [routerLink]="['/payslip', employee.id]" mat-raised-button>Genterate Slip</button></td>
+       
+  
+        <!-- <td [matMenuTriggerFor]="menu1" *ngIf="admin" >
+          <a>
+            <mat-icon style="cursor: pointer ; color: #504d78;"
+              >reorder</mat-icon
+            >
+            <mat-menu #menu1="matMenu">
+              <button mat-menu-item (click)="updateuser(emp.id)">
+                <mat-icon style="color: #504d78;">create</mat-icon>Update
+              </button>
+              <button mat-menu-item [routerLink]="['/profile', emp.id]">
+                <mat-icon style="color: #504d78;">info</mat-icon>Details
+              </button>
+            </mat-menu>
+          </a>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,42 +1,28 @@
+<div class="d-flex mt-5 mx-5 flex-row">
+  <div class=" fw-bolder mat-elevation-z8" style="color: #66b1cf; background-color: #555273; font-size: 50px;">
+    Profile
+  </div>
+  <div style="flex: auto"></div>
+  <div class="fs-3 fw-bold mat-elevation-z8 text-center" style="background-color: #555273; color: #66b1cf">
 
+  </div>
+</div>
 
-<div class="row gap-2 m-2">
-  <div
-    class="col-4 mat-elevation-z8 text-center fw-bolder"
-    style="height: 60vh; color: #555273; font-size: 25px"
-  >
-  <img *ngIf="employee.gender == 'female'"
-  src="../assets/female.png"
-  class="rounded-circle mx-auto d-block mt-4"
-  height="200px"
-  width="200px"
-  alt="img"
-/>
-<img *ngIf="employee.gender == 'male'"
-  src="../assets/male.png"
-  class="rounded-circle mx-auto d-block mt-4"
-  height="200px"
-  width="200px"
-  alt="img"
-/>
+<div class="row gap-2 m-4">
+  <div class="col-4 mat-elevation-z8 text-center fw-bolder" style="height: 60vh; color: #555273; font-size: 25px">
+    <img *ngIf="employee.gender == 'female'" src="../assets/female.png" class="rounded-circle mx-auto d-block mt-4"
+      height="200px" width="200px" alt="img" />
+    <img *ngIf="employee.gender == 'male'" src="../assets/male.png" class="rounded-circle mx-auto d-block mt-4"
+      height="200px" width="200px" alt="img" />
     <p class="mt-3">@{{ employee.id }}</p>
     <p>{{ employee.name }}</p>
 
-    <button
-      mat-raised-button
-      style="background-color: #555273; color: #e2eff1"
-      class="mt-3"
-      [routerLink]="['/form', 'edit', employee.id]"
-    >
+    <button mat-raised-button style="background-color: #555273; color: #e2eff1" class="mt-3"
+      [routerLink]="['/form', 'edit', employee.id]">
       Edit
     </button>
-    <button
-      *ngIf="isAdmin && !currentAdmin"
-      mat-raised-button
-      class="bg-danger mx-2 mt-3"
-      style="color: #e2eff1"
-      (click)="delete()"
-    >
+    <button *ngIf="isAdmin && !currentAdmin" mat-raised-button class="bg-danger mx-2 mt-3" style="color: #e2eff1"
+      (click)="delete()">
       Delete
     </button>
   </div>
@@ -86,8 +72,8 @@
         Leave Application
       </p>
       <div style="flex: auto"></div>
-      <button mat-raised-button color="warn" [routerLink]="['/leave']">
-        Applay
+      <button mat-raised-button style="background-color: #555273; color: #b6d5e1;" [routerLink]="['/leave']">
+        Apply
       </button>
     </div>
     <div style="overflow: auto; height: 20vh; margin-top: 5px;">
@@ -113,6 +99,92 @@
       </table>
     </div>
   </div>
-  <div class="col" style="height: 30vh; background-color: #b6d5e1"></div>
-  <div class="col" style="height: 30vh; background-color: #b6d5e1"></div>
+  <div class="col" style="height: 30vh; background-color: #b6d5e1">
+    <div class="d-flex mt-2" style="justify-content: left">
+      <p style="color: #555273; font-size: 25px; font-weight: 900">
+        Salary Details
+      </p>
+      <div style="flex: auto"></div>
+      <div><p class="fs-4">Month</p></div>
+    </div>
+      <div style="overflow: auto; height: 25vh; margin-top: 5px;">
+        <table class="table table-hover">
+          <thead>
+           
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Basic</th>
+              <td> +{{salary.basic}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Conveyance</th>
+              <td> +{{salary.conveyance}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Medical Allowence</th>
+              <td> +{{salary.medicalAllowance}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Provident Fund</th>
+              <td> -{{salary.providentFund}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Leave Deduction</th>
+              <td> -{{salary.leaveDeduction}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Tax</th>
+              <td>  -{{salary.tax}} </td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td> {{employee.salary}} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+  </div>
+  <div class="col" style="height: 30vh; background-color: #b6d5e1">
+    <div class="d-flex mt-2" style="justify-content: left">
+      <p style="color: #555273; font-size: 25px; font-weight: 900">
+        Assigned Task
+      </p>
+      <div style="flex: auto"></div>
+      <div><p class="fs-4"></p></div>
+    </div>
+      <div style="overflow: auto; height: 25vh; margin-top: 5px;">
+        <table class="table table-hover">
+          <thead>
+           
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div></div>
 </div>
