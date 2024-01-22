@@ -29,7 +29,7 @@ export class DashboardComponent implements DoCheck {
 
   toggle() {
     let url = this.route.url;
-    if (url.startsWith("/display")) {
+    if (url.startsWith("/display") ||  url == '/') {
       this.dahsboard = true;
       this.employee = false;
       this.profile = false;
@@ -37,7 +37,7 @@ export class DashboardComponent implements DoCheck {
       this.employee = true;
       this.dahsboard = false;
       this.profile = false;
-    } else if (url =="/profile") {
+    } else if (url.startsWith("/profile")) {
       this.profile = true;
       this.dahsboard = false;
       this.employee = false;

@@ -71,10 +71,10 @@ export class Model {
                 let index = this.employee
                     .findIndex(item => this.locator(item, p.id));
                 this.employee.splice(index, 1, p);
-
+                return this.getEmployeeObservable(employee.id ?? "");
             });
         }
-        return this.getEmployeeObservable(employee.id ?? "");
+      
     }
 
 

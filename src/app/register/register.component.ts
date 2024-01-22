@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Employee } from '../model/employee.model';
 import { Model } from '../service/repository.service';
@@ -42,6 +42,8 @@ export class RegisterComponent {
     })
   }
 
+
+
   registerform = this.builder.group({
     id: this.builder.control('', Validators.required),
     name: this.builder.control('', Validators.required),
@@ -79,7 +81,12 @@ export class RegisterComponent {
       Object.assign(this.employee, this.registerform.value);
       this.model.saveEmployee(this.employee);
       this.toaster.success("Save Succefull");
-      this.router.navigateByUrl("/home");
+
+      if (this.editing) {
+        this.router.navigate(['/profile',this.firstId]);
+      } else {
+        this.router.navigateByUrl("/home");
+      }
     } else {
       this.toaster.error("Enter valid data")
     }

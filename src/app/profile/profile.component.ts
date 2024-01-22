@@ -38,41 +38,49 @@ export class ProfileComponent implements DoCheck {
 
       if (id != null) {
         this.appId = id;
-        model.getEmployeeObservable(id).subscribe(p => {
-          Object.assign(this.employee, p || new Employee());
-          this.registerform.patchValue(this.employee);
-        });
+
       }
     })
   }
 
 
   ngDoCheck(): void {
+
+
+    this.model.getEmployeeObservable(this.appId).subscribe(p => {
+      Object.assign(this.employee, p || new Employee());
+    });
+
     this.leaveService.getUserLeave(this.appId ?? "").subscribe(leave => {
       Object.assign(this.aplicationLog, leave);
     })
   }
 
+  loadUser() {
 
-  registerform = this.builder.group({
-    id: this.builder.control('', Validators.required),
-    name: this.builder.control('', Validators.required),
-    password: this.builder.control('', Validators.required),
-    email: this.builder.control('', Validators.email),
-    gender: this.builder.control('male'),
-    designation: this.builder.control(""),
-    department: this.builder.control(""),
-    role: this.builder.control(''),
-    isactive: this.builder.control(false),
-    salary: this.builder.control(0),
-    joinDate: this.builder.control(new Date())
-  });
+  }
+
+
+  // registerform = this.builder.group({
+  //   id: this.builder.control('', Validators.required),
+  //   name: this.builder.control('', Validators.required),
+  //   password: this.builder.control('', Validators.required),
+  //   email: this.builder.control('', Validators.email),
+  //   gender: this.builder.control('male'),
+  //   designation: this.builder.control(""),
+  //   department: this.builder.control(""),
+  //   role: this.builder.control(''),
+  //   isactive: this.builder.control(false),
+  //   salary: this.builder.control(0),
+  //   joinDate: this.builder.control(new Date())
+  // });
 
 
 
   delete() {
     this.model.deleteEmployee(this.employee.id ?? "");
-    this.toast.success("Delete Successfully")
+    this.toast.success("Delete Successfully"),
+      this.router.navigateByUrl("/")
   }
 
 }

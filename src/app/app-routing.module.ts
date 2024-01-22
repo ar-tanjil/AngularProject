@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "display", component: DisplayComponent, canActivate: [AuthGuard] },
   { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "form/add", component: RegisterComponent },
-  { path: "form/edit/:id", component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: "form/:mode/:id", component: RegisterComponent, canActivate: [AuthGuard] },
   { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "leave", component: LeaveRequstComponent, canActivate: [AuthGuard] },

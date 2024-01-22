@@ -86,7 +86,10 @@
            class="bg-info"
             >Back to Login</a
           >
-          <a routerLink="/" *ngIf="isLoggedIn" mat-raised-button class="bg-info-subtle"
+          <a [routerLink]="['/profile', firstId]" *ngIf="isLoggedIn && editing" mat-raised-button class="bg-info-subtle"
+            >Back</a
+          >
+          <a routerLink="/home" *ngIf="isLoggedIn && !editing &&isAdmin" mat-raised-button class="bg-info-subtle"
             >Back</a
           >
         </div>

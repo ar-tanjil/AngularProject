@@ -2,51 +2,68 @@
   "employee": [
     {
       "id": "ar",
-      "name": "Ashiq",
+      "name": "Ashiqur Rahman",
       "department": "administration",
       "designation": "manager",
       "gender": "male",
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 500000,
+      "salary": 50000,
       "joinDate": "2024-01-09T18:00:00.000Z",
       "email": "artanjil@hotmail.com"
     },
     {
       "id": "tr",
-      "name": "Tanjil",
-      "department": "sales",
+      "name": "Tanjil Bin Moin",
+      "department": "administration",
       "designation": "trainee",
       "gender": "male",
       "role": "sales",
       "isactive": true,
       "password": "123",
-      "salary": 500000,
-      "joinDate": "2024-01-09T18:00:00.000Z",
-      "email": "artanjil@hotmail.com"
+      "salary": 50000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "tanjil@gamil.com"
     },
     {
-      "id": "ab",
-      "name": "Abeer",
+      "id": "abeer",
+      "name": "Rafiul Abeer khan",
       "department": "account",
       "designation": "manager",
       "gender": "male",
       "role": "accountent",
       "isactive": true,
       "password": "123",
-      "email": ""
+      "salary": 50000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "abeer@gmail.com"
     },
     {
-      "id": "ta",
-      "name": "Ashiqur",
+      "id": "tanvir",
+      "name": "Mojammel Hosen",
+      "department": "sales",
+      "designation": "manager",
+      "gender": "male",
+      "role": "sales",
+      "isactive": true,
+      "password": "123",
+      "salary": 50000,
+      "joinDate": "2024-01-22T06:29:47.184Z",
+      "email": "mojammel@gamil.com"
+    },
+    {
+      "id": "polin",
+      "name": "Mahbubul Hoque",
       "department": "purchase",
-      "designation": "trainee",
+      "designation": "manager",
       "gender": "male",
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "email": ""
+      "salary": 50000,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "mahbub@gmail.com"
     }
   ],
   "role": [
@@ -174,7 +191,7 @@
       "reason": "amnai",
       "from": "2024-01-21T11:51:40.473Z",
       "to": "2024-01-22T18:00:00.000Z",
-      "status": "pending",
+      "status": "accept",
       "id": 9
     },
     {
@@ -183,7 +200,7 @@
       "reason": "afasdfa",
       "from": "2024-01-21T11:53:56.444Z",
       "to": "2024-01-21T11:53:56.444Z",
-      "status": "pending",
+      "status": "reject",
       "id": 10
     },
     {
@@ -192,7 +209,7 @@
       "reason": "afaf",
       "from": "2024-01-21T11:54:29.496Z",
       "to": "2024-01-21T11:54:29.496Z",
-      "status": "pending",
+      "status": "accept",
       "id": 11
     },
     {
@@ -203,6 +220,15 @@
       "to": null,
       "status": null,
       "id": 12
+    },
+    {
+      "name": "ar",
+      "type": "casual",
+      "reason": "455",
+      "from": "2024-01-22T06:50:55.394Z",
+      "to": "2024-01-22T06:50:55.394Z",
+      "status": "pending",
+      "id": 13
     }
   ]
 }

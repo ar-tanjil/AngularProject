@@ -23,17 +23,17 @@
             <mat-card>
               <mat-card-content
                 class="customCard mat-elevation-z8 rounded"
-                style="height: 200px; background-color: #55829c"
+                style="height: 200px; background-color: #65799b"
               >
                 <div
                   class="d-flex justify-content-center align-items-center h-75"  style="color:#e2eff1; font-size: large"
                 >
                   <div>
-                    <p class="text-center" style="font-size: 25px">
+                    <p class="text-center  fw-bolder" style="font-size: 25px">
                       Total Employee
                     </p>
 
-                    <p class="text-center fw-bold" style="font-size: 40px"><mat-icon>supervisor_account</mat-icon> {{ getAllEmploye().length }}</p>
+                    <p class="text-center fw-bolder m-3" style="font-size: 40px"><mat-icon>supervisor_account</mat-icon> {{ getAllEmploye().length }}</p>
                   </div>
                 </div>
               </mat-card-content>
@@ -81,8 +81,15 @@
         class="customCard mat-elevation-z8 rounded"
         style="height: 400px; background-color: #555273"
       >
-        <img
-          src="../assets/employee.jpg"
+        <img *ngIf="user.gender == 'female'"
+          src="../assets/female.png"
+          class="rounded-circle mx-auto d-block mt-4"
+          height="100px"
+          width="100px"
+          alt="img"
+        />
+        <img *ngIf="user.gender == 'male'"
+          src="../assets/male.png"
           class="rounded-circle mx-auto d-block mt-4"
           height="100px"
           width="100px"
