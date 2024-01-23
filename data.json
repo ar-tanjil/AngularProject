@@ -9,7 +9,7 @@
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
+      "salary": 46000,
       "joinDate": "2024-01-09T18:00:00.000Z",
       "email": "artanjil@hotmail.com"
     },
@@ -17,12 +17,12 @@
       "id": "tr",
       "name": "Tanjil Bin Moin",
       "department": "administration",
-      "designation": "trainee",
+      "designation": "sr.officer",
       "gender": "male",
       "role": "sales",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
+      "salary": 0,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "tanjil@gamil.com"
     },
@@ -35,7 +35,7 @@
       "role": "accountent",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
+      "salary": 27500,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "abeer@gmail.com"
     },
@@ -48,7 +48,7 @@
       "role": "sales",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
+      "salary": 48500,
       "joinDate": "2024-01-22T06:29:47.184Z",
       "email": "mojammel@gamil.com"
     },
@@ -61,7 +61,7 @@
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "salary": 50000,
+      "salary": 43500,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "mahbub@gmail.com"
     },
@@ -74,7 +74,7 @@
       "role": "accountent",
       "isactive": true,
       "password": "123",
-      "salary": 30000,
+      "salary": 40500,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "ruma@gmail.com"
     },
@@ -87,7 +87,7 @@
       "role": "sales",
       "isactive": false,
       "password": "123",
-      "salary": 30000,
+      "salary": 23000,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "imran@gmail.com"
     },
@@ -100,7 +100,7 @@
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "salary": 30000,
+      "salary": 41850,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "hanee@gmail.com"
     },
@@ -113,7 +113,7 @@
       "role": "admin",
       "isactive": true,
       "password": "123",
-      "salary": 30000,
+      "salary": 42900,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "shovo@gmail.com"
     },
@@ -121,12 +121,12 @@
       "id": "abeer1",
       "name": "Abedur Raman",
       "department": "account",
-      "designation": "trainee",
+      "designation": "sr.officer",
       "gender": "male",
       "role": "accountent",
       "isactive": false,
       "password": "123",
-      "salary": 30000,
+      "salary": 35000,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "abeer1@gmail.com"
     },
@@ -139,7 +139,7 @@
       "role": "sales",
       "isactive": false,
       "password": "123",
-      "salary": 47000,
+      "salary": 0,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "shorif@gmail.com"
     },
@@ -152,7 +152,7 @@
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "salary": 27200,
+      "salary": 0,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "salman@gmail.com"
     },
@@ -165,7 +165,7 @@
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "salary": 30000,
+      "salary": 0,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "elma@gmail.com"
     }
@@ -212,6 +212,14 @@
       "name": "Manager"
     },
     {
+      "code": "sr.officer",
+      "name": "Sr. Officer"
+    },
+    {
+      "code": "jr.officer",
+      "name": "Jr. Officer"
+    },
+    {
       "code": "trainee",
       "name": "Trainee"
     }
@@ -219,179 +227,112 @@
   "leaveRequest": [
     {
       "name": "ar",
-      "type": "sick",
-      "reason": "122",
-      "from": "2024-01-21T05:09:00.746Z",
-      "to": "2024-01-21T05:09:00.746Z",
-      "status": "accept",
+      "type": "casual",
+      "reason": "Casual Reason",
+      "from": "2024-01-16T18:00:00.000Z",
+      "to": "2024-01-16T18:00:00.000Z",
+      "status": "pending",
       "id": 1
-    },
-    {
-      "name": "ar",
-      "type": "sick",
-      "reason": "11254444",
-      "from": "2016-01-01T18:00:00.000Z",
-      "to": "2023-12-31T18:00:00.000Z",
-      "status": "accept",
-      "id": 2
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "bari zabo",
-      "from": "2024-01-21T18:00:00.000Z",
-      "to": "2024-01-21T05:29:20.672Z",
-      "status": "reject",
-      "id": 3
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "aaaaaaaaaaaa",
-      "from": "2024-01-21T18:00:00.000Z",
-      "to": "2024-01-07T18:00:00.000Z",
-      "status": "reject",
-      "id": 4
-    },
-    {
-      "name": "tr",
-      "type": "casual",
-      "reason": "Dont ask question it casual",
-      "from": "2024-01-21T06:00:42.603Z",
-      "to": "2024-01-21T06:00:42.603Z",
-      "status": "reject",
-      "id": 5
-    },
-    {
-      "name": null,
-      "type": null,
-      "reason": null,
-      "from": null,
-      "to": null,
-      "status": null,
-      "id": 6
-    },
-    {
-      "name": null,
-      "type": null,
-      "reason": null,
-      "from": null,
-      "to": null,
-      "status": null,
-      "id": 7
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "\\]'",
-      "from": "2024-01-21T08:31:15.429Z",
-      "to": "2024-01-21T08:31:15.429Z",
-      "status": "accept",
-      "id": 8
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "amnai",
-      "from": "2024-01-21T11:51:40.473Z",
-      "to": "2024-01-22T18:00:00.000Z",
-      "status": "accept",
-      "id": 9
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "afasdfa",
-      "from": "2024-01-21T11:53:56.444Z",
-      "to": "2024-01-21T11:53:56.444Z",
-      "status": "reject",
-      "id": 10
-    },
-    {
-      "name": "ar",
-      "type": "sick",
-      "reason": "afaf",
-      "from": "2024-01-21T11:54:29.496Z",
-      "to": "2024-01-21T11:54:29.496Z",
-      "status": "accept",
-      "id": 11
-    },
-    {
-      "name": null,
-      "type": "sick",
-      "reason": "afdadf",
-      "from": "2024-01-03T18:00:00.000Z",
-      "to": null,
-      "status": null,
-      "id": 12
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "455",
-      "from": "2024-01-22T06:50:55.394Z",
-      "to": "2024-01-22T06:50:55.394Z",
-      "status": "pending",
-      "id": 13
-    },
-    {
-      "name": "ar",
-      "type": "casual",
-      "reason": "gergt3w",
-      "from": "2024-01-22T11:34:36.933Z",
-      "to": "2024-01-22T11:34:36.933Z",
-      "status": "reject",
-      "id": 14
-    },
-    {
-      "name": "tr",
-      "type": "sick",
-      "reason": "I was sick",
-      "from": "2024-01-15T18:00:00.000Z",
-      "to": "2024-01-15T18:00:00.000Z",
-      "status": "reject",
-      "id": 15
-    },
-    {
-      "name": "tr",
-      "type": "casual",
-      "reason": "hayre liv",
-      "from": "2024-01-22T18:09:21.224Z",
-      "to": "2024-01-22T18:09:21.224Z",
-      "status": "pending",
-      "id": 16
-    },
-    {
-      "name": null,
-      "type": null,
-      "reason": null,
-      "from": null,
-      "to": null,
-      "status": null,
-      "id": 17
     }
   ],
   "salary": [
     {
-      "id": "shorif",
-      "currentMonth": "2024-01-22T16:31:01.038Z",
+      "id": "ar",
+      "currentMonth": "2024-01-23T02:42:08.286Z",
       "basic": 50000,
-      "conveyance": 5000,
+      "conveyance": 3000,
       "medicalAllowance": 2000,
       "providentFund": 5000,
-      "leaveDeduction": 1000,
-      "tax": 4000,
+      "leaveDeduction": 2000,
+      "tax": 2000,
       "status": "due"
     },
     {
-      "id": "salman",
-      "currentMonth": "2024-01-22T18:21:18.656Z",
+      "id": "abeer",
+      "currentMonth": "2024-01-23T02:59:59.616Z",
       "basic": 30000,
       "conveyance": 500,
-      "medicalAllowance": 3000,
+      "medicalAllowance": 1000,
+      "providentFund": 2000,
+      "leaveDeduction": 1000,
+      "tax": 1000,
+      "status": "due"
+    },
+    {
+      "id": "tanvir",
+      "currentMonth": "2024-01-23T03:00:32.022Z",
+      "basic": 50000,
+      "conveyance": 4000,
+      "medicalAllowance": 2000,
       "providentFund": 5000,
       "leaveDeduction": 1000,
-      "tax": 300,
+      "tax": 1500,
+      "status": "due"
+    },
+    {
+      "id": "polin",
+      "currentMonth": "2024-01-23T03:01:07.895Z",
+      "basic": 50000,
+      "conveyance": 2000,
+      "medicalAllowance": 1500,
+      "providentFund": 5000,
+      "leaveDeduction": 3000,
+      "tax": 2000,
+      "status": "due"
+    },
+    {
+      "id": "ruma",
+      "currentMonth": "2024-01-23T03:01:40.109Z",
+      "basic": 45000,
+      "conveyance": 2000,
+      "medicalAllowance": 1000,
+      "providentFund": 4500,
+      "leaveDeduction": 1500,
+      "tax": 1500,
+      "status": "due"
+    },
+    {
+      "id": "imran",
+      "currentMonth": "2024-01-23T03:02:11.279Z",
+      "basic": 30000,
+      "conveyance": 1500,
+      "medicalAllowance": 1500,
+      "providentFund": 4500,
+      "leaveDeduction": 4500,
+      "tax": 1000,
+      "status": "due"
+    },
+    {
+      "id": "hanee",
+      "currentMonth": "2024-01-23T03:02:47.916Z",
+      "basic": 40000,
+      "conveyance": 4000,
+      "medicalAllowance": 500,
+      "providentFund": 1200,
+      "leaveDeduction": 450,
+      "tax": 1000,
+      "status": "due"
+    },
+    {
+      "id": "shovo",
+      "currentMonth": "2024-01-23T03:03:23.164Z",
+      "basic": 45000,
+      "conveyance": 3000,
+      "medicalAllowance": 400,
+      "providentFund": 1000,
+      "leaveDeduction": 3000,
+      "tax": 1500,
+      "status": "due"
+    },
+    {
+      "id": "abeer1",
+      "currentMonth": "2024-01-23T03:04:13.885Z",
+      "basic": 40000,
+      "conveyance": 4000,
+      "medicalAllowance": 3000,
+      "providentFund": 10000,
+      "leaveDeduction": 0,
+      "tax": 2000,
       "status": "due"
     }
   ]

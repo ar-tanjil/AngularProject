@@ -15,7 +15,7 @@
   </div>
 
   <button
-  routerLink="/salary/1"
+  routerLink="/salary"
   mat-raised-button
   class="my-3"
   style="float: right; margin-right: 15px; background-color: #504d78; color: #b6d5e1;"
@@ -33,8 +33,9 @@
         <th scope="col" style="color: #504d78;">Join Date</th>
         <th scope="col" style="color: #504d78;">Total Salary</th>
         <th scope="col" style="color: #504d78;">Payslip</th>
+        <th scope="col"></th>
       
-        <!-- <th scope="col" style="color: #504d78;" *ngIf="admin"></th> -->
+        
       </tr>
     </thead>
     <tbody>
@@ -50,22 +51,9 @@
         
         <td><button class="btn btn-sm" style="color: #504d78; background-color: #b6d5e1;" [routerLink]="['/payslip', employee.id]" mat-raised-button>Genterate Slip</button></td>
        
-  
-        <!-- <td [matMenuTriggerFor]="menu1" *ngIf="admin" >
-          <a>
-            <mat-icon style="cursor: pointer ; color: #504d78;"
-              >reorder</mat-icon
-            >
-            <mat-menu #menu1="matMenu">
-              <button mat-menu-item (click)="updateuser(emp.id)">
-                <mat-icon style="color: #504d78;">create</mat-icon>Update
-              </button>
-              <button mat-menu-item [routerLink]="['/profile', emp.id]">
-                <mat-icon style="color: #504d78;">info</mat-icon>Details
-              </button>
-            </mat-menu>
-          </a>
-        </td> -->
+        <td><button class="btn btn-sm" mat-raised-button [routerLink]="['/salary', employee.id]" >
+          <mat-icon style="color: #504d78;">create</mat-icon>Update
+        </button></td>
       </tr>
     </tbody>
   </table>

@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "payroll", component: PayrollComponent, canActivate: [AuthGuard] },
   { path: "salary/:id", component: SalaryFormComponent, canActivate: [AuthGuard] },
+  { path: "salary", component: SalaryFormComponent, canActivate: [AuthGuard] },
   { path: "payslip/:id", component: PayslipComponent, canActivate: [AuthGuard] },
   { path: "leave", component: LeaveRequstComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },

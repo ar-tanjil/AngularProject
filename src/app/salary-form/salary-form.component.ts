@@ -5,6 +5,7 @@ import { Employee } from '../model/employee.model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Salary } from '../model/salary.model';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-salary-form',
@@ -13,10 +14,22 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SalaryFormComponent {
 
+salary: Salary =new Salary();
+editing: boolean = false;
 
   constructor(private empService: Model, private salService: SalaryService, private builder: FormBuilder,
-    public toster: ToastrService) {
+    public toster: ToastrService, private activeRoute: ActivatedRoute, private route: Router) {
 
+      activeRoute.params.subscribe(params => {
+        let id = params["id"];
+        if (id != null) {
+          salService.getSalaryObservable(id).subscribe(sal => {
+            this.editing = true;
+            Object.assign(this.salary, sal || new Salary());
+            this.slaryForm.patchValue(this.salary);
+          });
+        }
+      })
   }
 
 
@@ -58,6 +71,7 @@ export class SalaryFormComponent {
           this.salService.saveSalary(salary);
           this.toster.success("Successfull");
           this.slaryForm.reset();
+          this.route.navigateByUrl("/payroll");
         })
       }
     }

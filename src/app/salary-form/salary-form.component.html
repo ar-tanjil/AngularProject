@@ -4,9 +4,9 @@
             <div class="card-body text-center" style="color: #555273; background-color: #b6d5e1;"> 
                 <h1 class="card-title fw-bolder" >Salary Form</h1>
                     <form [formGroup]="slaryForm" (ngSubmit)="submitForm()">
-                      <mat-form-field>
+                      <mat-form-field *ngIf="!editing">
                         <mat-label>Select Employee</mat-label>
-                        <mat-select name="id" formControlName="id">
+                        <mat-select  name="id" formControlName="id">
                           <mat-option
                             *ngFor="let user of getUserId()"
                             [value]="user.id"
@@ -15,6 +15,17 @@
                           </mat-option>
                         </mat-select>
                       </mat-form-field>
+                      <mat-form-field class="w-100" *ngIf="editing">
+                        <mat-label>Employee Id</mat-label>
+                        <input
+                          matInput
+                          placeholder="Basic"
+                          formControlName="id"
+                          type="text"
+                          readonly
+                        />
+                      </mat-form-field>
+
                         <div class="row">
                             <div class="col">
                                 <mat-form-field class="w-100">

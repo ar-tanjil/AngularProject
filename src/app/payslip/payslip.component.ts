@@ -50,5 +50,14 @@ export class PayslipComponent  {
     return total;
   }
 
+  getMonth(){
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+    let date = new Date();
+    let month = monthNames[date.getMonth()].toUpperCase();
+    let year = date.getFullYear()
+    return `${month} ${year}`
+  }
 
 }
