@@ -22,7 +22,7 @@ export class ProfileComponent {
   appId!: string;
   salary: Salary = new Salary();
 
-  constructor(public model: Model, activeRoute: ActivatedRoute,
+  constructor(public model: Model, private activeRoute: ActivatedRoute,
     public router: Router, private builder: FormBuilder, private toast: ToastrService, public leaveService: LeaveService,
     private salService: SalaryService) {
     this.isAdmin = this.model.isAdmin();
@@ -48,6 +48,29 @@ export class ProfileComponent {
         });
       }
     })
+  }
+
+
+
+  getEmployee() {
+    this.activeRoute.params.subscribe(params => {
+      let id = params["id"];
+      let adminId = sessionStorage.getItem("username");
+      if (id != null && id != adminId) {
+        this.currentAdmin = false;
+      } else {
+        this.currentAdmin = true;
+        id = adminId;
+      }
+      if (id != null) {
+        this.appId = id;
+        this.model.getEmployeeObservable(this.appId).subscribe(p => {
+          Object.assign(this.employee, p || new Employee());
+        });
+      }
+    })
+    return this.employee;
+
   }
 
 

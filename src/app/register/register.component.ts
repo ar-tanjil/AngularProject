@@ -89,7 +89,7 @@ export class RegisterComponent {
       this.toaster.success("Save Succefull");
 
       if (this.editing) {
-        this.router.navigate(['/profile',this.firstId]);
+        this.router.navigateByUrl(`/profile/${this.firstId}`);
       } else {
         this.router.navigateByUrl("/home");
       }

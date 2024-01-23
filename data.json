@@ -108,7 +108,7 @@
       "id": "shovo",
       "name": "Mehdi Hasan Shovo",
       "department": "administration",
-      "designation": "trainee",
+      "designation": "sr.officer",
       "gender": "male",
       "role": "admin",
       "isactive": true,
@@ -134,14 +134,14 @@
       "id": "shorif",
       "name": "Shorif Hosen",
       "department": "sales",
-      "designation": "trainee",
+      "designation": "sr.officer",
       "gender": "male",
       "role": "sales",
       "isactive": false,
       "password": "123",
       "salary": 0,
       "joinDate": "2023-12-31T18:00:00.000Z",
-      "email": "shorif@gmail.com"
+      "email": "shorif123@gmail.com"
     },
     {
       "id": "salman",
@@ -165,9 +165,22 @@
       "role": "purchase",
       "isactive": true,
       "password": "123",
-      "salary": 0,
+      "salary": 30000,
       "joinDate": "2023-12-31T18:00:00.000Z",
       "email": "elma@gmail.com"
+    },
+    {
+      "id": "tan",
+      "name": "Iqramul Hoque Taneem",
+      "department": "administration",
+      "designation": "sr.officer",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true,
+      "password": "123",
+      "salary": 62500,
+      "joinDate": "2023-12-31T18:00:00.000Z",
+      "email": "taneem@gmail.com"
     }
   ],
   "role": [
@@ -233,6 +246,24 @@
       "to": "2024-01-16T18:00:00.000Z",
       "status": "pending",
       "id": 1
+    },
+    {
+      "name": "tan",
+      "type": "sick",
+      "reason": "Feaver",
+      "from": "2024-01-11T18:00:00.000Z",
+      "to": "2024-01-14T18:00:00.000Z",
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "name": "tr",
+      "type": "casual",
+      "reason": "Family Problem",
+      "from": "2024-01-19T18:00:00.000Z",
+      "to": "2024-01-20T18:00:00.000Z",
+      "status": "pending",
+      "id": 3
     }
   ],
   "salary": [
@@ -333,6 +364,28 @@
       "providentFund": 10000,
       "leaveDeduction": 0,
       "tax": 2000,
+      "status": "due"
+    },
+    {
+      "id": "elma",
+      "currentMonth": "2024-01-23T03:15:25.155Z",
+      "basic": 30000,
+      "conveyance": 5000,
+      "medicalAllowance": 1000,
+      "providentFund": 2000,
+      "leaveDeduction": 4000,
+      "tax": 0,
+      "status": "due"
+    },
+    {
+      "id": "tan",
+      "currentMonth": "2024-01-23T03:17:54.605Z",
+      "basic": 60000,
+      "conveyance": 3000,
+      "medicalAllowance": 5000,
+      "providentFund": 5000,
+      "leaveDeduction": 0,
+      "tax": 500,
       "status": "due"
     }
   ]

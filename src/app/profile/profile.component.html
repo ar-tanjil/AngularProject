@@ -14,11 +14,11 @@
       height="200px" width="200px" alt="img" />
     <img *ngIf="employee.gender == 'male'" src="../assets/male.png" class="rounded-circle mx-auto d-block mt-4"
       height="200px" width="200px" alt="img" />
-    <p class="mt-3">@{{ employee.id }}</p>
-    <p>{{ employee.name }}</p>
+    <p class="mt-3">@{{ getEmployee().id }}</p>
+    <p>{{ getEmployee().name }}</p>
 
     <button mat-raised-button style="background-color: #555273; color: #e2eff1" class="mt-3"
-      [routerLink]="['/form', 'edit', employee.id]">
+      [routerLink]="['/form', 'edit', getEmployee().id]">
       Edit
     </button>
     <button *ngIf="isAdmin && !currentAdmin" mat-raised-button class="bg-danger mx-2 mt-3" style="color: #e2eff1"
@@ -31,34 +31,34 @@
       <tbody>
         <tr>
           <th scope="col" style="color: #555273">Name:</th>
-          <td style="color: #555273">{{ employee.name | titlecase }}</td>
+          <td style="color: #555273">{{ getEmployee().name | titlecase }}</td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Gender:</th>
-          <td style="color: #555273">{{ employee.gender | titlecase }}</td>
+          <td style="color: #555273">{{ getEmployee().gender | titlecase }}</td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Email:</th>
-          <td style="color: #555273">{{ employee.email }}</td>
+          <td style="color: #555273">{{ getEmployee().email }}</td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Join Date:</th>
           <td style="color: #555273">
-            {{ employee.joinDate | date : "fullDate" }}
+            {{ getEmployee().joinDate | date : "fullDate" }}
           </td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Designation:</th>
-          <td style="color: #555273">{{ employee.designation | titlecase }}</td>
+          <td style="color: #555273">{{ getEmployee().designation | titlecase }}</td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Department:</th>
-          <td style="color: #555273">{{ employee.department | titlecase }}</td>
+          <td style="color: #555273">{{ getEmployee().department | titlecase }}</td>
         </tr>
         <tr>
           <th scope="col" style="color: #555273">Salary:</th>
           <td style="color: #555273">
-            {{ employee.salary | number : ".2-2" }}
+            {{ getEmployee().salary | number : ".2-2" }}
           </td>
         </tr>
       </tbody>
